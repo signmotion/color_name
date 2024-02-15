@@ -1,6 +1,6 @@
-# Uni(versal) Color Name
+# Uni(fying) Color Name
 
-![Cover - Uni Color Name](https://raw.githubusercontent.com/signmotion/uni_color_name/master/images/cover.webp)
+![Cover - Unifying Color Name](https://raw.githubusercontent.com/signmotion/uni_color_name/master/images/cover.webp)
 
 [![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/signmotion/uni_color_name/master/LICENSE)
 
@@ -24,9 +24,9 @@ forrest green
 
 ## Color Palettes
 
-You can add your own color palette: the class `ColorName` can handle any inherited palette from `Palette<T>`.
+You can add your own color palette: the class `ColorName` can handle any inherited palette from `Palette`.
 
-The helper table: <https://docs.google.com/spreadsheets/d/1f8wvrgqfGcXFAiAXx-p9CgLXo3__IoEn8-Us-uRyfok/copy>
+The [helper table](https://docs.google.com/spreadsheets/d/1f8wvrgqfGcXFAiAXx-p9CgLXo3__IoEn8-Us-uRyfok/copy).
 
 ## Welcome
 
@@ -39,11 +39,12 @@ General questions are best asked on
 
 ## TODO
 
-- Feautures for this package into README.
-- Converters between models.
+- Feautures for this package into `README`.
+- Converters between models. See [1](https://dev.to/bytebodger/determining-the-rgb-distance-between-two-colors-4n91) and [2](https://github.com/MichaelFenwick/Color).
 - Converters between palettes.
 - How to define your own map for color palette.
 - Optimize a search.
 - Fuzzy search by name.
 - Fuzzy search by value.
-- More palettes. See <https://en.wikipedia.org/wiki/List_of_colors:_A%E2%80%93F>
+- `operator[]` for getting a value by color name and vice versa.
+- More palettes. See [link](https://en.wikipedia.org/wiki/List_of_colors:_A%E2%80%93F).
