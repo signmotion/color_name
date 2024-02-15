@@ -63,7 +63,7 @@ and it will be automatically reflected in the PR.
   [file a bug or feature report][GitHub issues], so that we can discuss what direction to follow.
 - [Fork the project][fork guide] on GitHub.
 - Clone the forked repository to your local development machine
-  (e.g. `git clone git@github.com:<YOUR_GITHUB_USER>/color_name.git`).
+  (e.g. `git clone git@github.com:<YOUR_GITHUB_USER>/uni_color_name.git`).
 
 ### Performing changes
 
@@ -75,7 +75,7 @@ and it will be automatically reflected in the PR.
 
 ### Open a pull request
 
-Go to the [pull request page of ColorName][PRs] and in the top
+Go to the [pull request page of UniColorName][PRs] and in the top
 of the page it will ask you if you want to open a pull request from your newly created branch.
 
 The title of the pull request should start with a [conventional commit] type.
@@ -91,8 +91,8 @@ Examples of such types:
 If you introduce a **breaking change** the conventional commit type MUST end with an exclamation
 mark (e.g. `feat!: Remove the argument from ZipLoader.getFile()`).
 
-[GitHub issue]: https://github.com/signmotion/color_name/issues/new
-[GitHub issues]: https://github.com/signmotion/color_name/issues/new
-[PRs]: https://github.com/signmotion/color_name/pulls
+[GitHub issue]: https://github.com/signmotion/uni_color_name/issues/new
+[GitHub issues]: https://github.com/signmotion/uni_color_name/issues/new
+[PRs]: https://github.com/signmotion/uni_color_name/pulls
 [fork guide]: https://guides.github.com/activities/forking/#fork
 [conventional commit]: https://www.conventionalcommits.org

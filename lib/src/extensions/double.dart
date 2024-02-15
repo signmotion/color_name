@@ -1,4 +1,4 @@
-part of '../../../color_name.dart';
+part of '../../uni_color_name.dart';
 
 extension ColorNameDoubleExt on double {
   static const defaultZeroValue = 0.0001;

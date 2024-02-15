@@ -1,4 +1,4 @@
-part of '../../color_name.dart';
+part of '../uni_color_name.dart';
 
 abstract class Palette<T> {
   const Palette(this.model, this.map);

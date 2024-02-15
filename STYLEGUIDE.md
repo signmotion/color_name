@@ -1,6 +1,6 @@
 # Style Guide
 
-This is a general style guide that shall govern over all `ColorName` repositories. The aim is
+This is a general style guide that shall govern over all `UniColorName` repositories. The aim is
 to keep all codebases clean and pristine. This includes high level guidance to help with simple
 decisions in the day-to-day development life.
 
@@ -57,7 +57,7 @@ foo(f1,
 ### Imports
 
 - Never include unused or duplicated imports.
-- You must always use relative imports for imports within the `ColorName` library
+- You must always use relative imports for imports within the `UniColorName` library
   (internal imports must be relative).
 - Omit `./` for relative imports from the same directory.
 - Avoid importing groups of APIs internally.

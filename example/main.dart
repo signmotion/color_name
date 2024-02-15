@@ -1,6 +1,6 @@
 // ignore_for_file: avoid_print
 
-import 'package:color_name/color_name.dart';
+import 'package:uni_color_name/uni_color_name.dart';
 
 void main() {
   const c = UniColorName();

@@ -1,4 +1,4 @@
-part of '../../../color_name.dart';
+part of '../../uni_color_name.dart';
 
 /// Thanks: https://github.com/zeplin/zeplin-palette/tree/master
 const zeplinRgbMap = <String, UniColor>{

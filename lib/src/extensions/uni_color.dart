@@ -1,4 +1,4 @@
-part of '../../../color_name.dart';
+part of '../../uni_color_name.dart';
 
 extension ColorNameUniColorExt on UniColor {
   UniColor roundToDecimalPlaces(int decimals) => decimals < 0

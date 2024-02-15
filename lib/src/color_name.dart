@@ -1,4 +1,4 @@
-part of '../../color_name.dart';
+part of '../uni_color_name.dart';
 
 abstract class ColorName<T, P extends Palette<T>> {
   const ColorName({required this.palette});

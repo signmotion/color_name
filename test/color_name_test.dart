@@ -1,8 +1,8 @@
-import 'package:color_name/color_name.dart';
+import 'package:uni_color_name/uni_color_name.dart';
 import 'package:test/test.dart';
 
 void main() {
-  group('ColorName', () {
+  group('UniColorName', () {
     const c = UniColorName();
     const forrestGreenName = 'forrest green';
     const forrestGreenValue =

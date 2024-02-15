@@ -1,8 +1,8 @@
-# Color Name
+# Uni(versal) Color Name
 
-![Cover - Color Name](https://raw.githubusercontent.com/signmotion/color_name/master/images/cover.webp)
+![Cover - Uni Color Name](https://raw.githubusercontent.com/signmotion/uni_color_name/master/images/cover.webp)
 
-[![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/signmotion/color_name/master/LICENSE)
+[![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/signmotion/uni_color_name/master/LICENSE)
 
 Identifies the value of a color by name and vice versa. Knows over 900 color names.
 The easy-to-use and well-tested library.
@@ -31,11 +31,11 @@ The helper table: <https://docs.google.com/spreadsheets/d/1f8wvrgqfGcXFAiAXx-p9C
 ## Welcome
 
 This package is open-source, stable and well-tested. Development happens on
-[GitHub](https://github.com/signmotion/color_name). Feel free to report issues
+[GitHub](https://github.com/signmotion/uni_color_name). Feel free to report issues
 or create a pull-request there.
 
 General questions are best asked on
-[StackOverflow](https://stackoverflow.com/questions/tagged/color_name).
+[StackOverflow](https://stackoverflow.com/questions/tagged/uni_color_name).
 
 ## TODO
 
