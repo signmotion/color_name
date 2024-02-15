@@ -12,7 +12,7 @@ extension ColorNameDoubleExt on double {
   bool isNear(double v, [double zeroValue = defaultZeroValue]) =>
       (this - v).abs() < zeroValue;
 
-  double roundToDecimalPlaces(int decimals) {
+  double roundToDecimals(int decimals) {
     if (decimals < 0) {
       return this;
     }

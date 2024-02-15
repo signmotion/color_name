@@ -26,8 +26,8 @@ class UniColorName extends ColorName<UniColor, UniPalette> {
   String? name(UniColor value, {int decimalPlaces = -1}) {
     for (final e in palette.map.entries) {
       // match with precission
-      if (e.value.roundToDecimalPlaces(decimalPlaces) ==
-          value.roundToDecimalPlaces(decimalPlaces)) {
+      if (e.value.colorToRoundDecimals(decimalPlaces) ==
+          value.colorToRoundDecimals(decimalPlaces)) {
         return e.key;
       }
     }
