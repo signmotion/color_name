@@ -29,7 +29,9 @@ class UniColorName extends ColorName<UniColor, UniPalette> {
   String? name<A>(A value, {int decimals = -1}) => switch (value) {
         UniColor c => _name(c, decimals: decimals),
         UniColorShort cs => _name(cs.withModel(model), decimals: decimals),
-        _ => null,
+        _ => throw ArgumentError(
+            'A `value` should be `UniColor` or `UniColorShort`.'
+            ' We have: `${value.runtimeType}`.'),
       };
 
   String? _name(UniColor value, {int decimals = -1}) {
