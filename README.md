@@ -24,7 +24,9 @@ forrest green
 
 ## Color Palettes
 
-You can add your own color palette: the class `ColorName` can work with any palette inherited from `Palette<T>`.
+You can add your own color palette: the class `ColorName` can handle any inherited palette from `Palette<T>`.
+
+The helper table: <https://docs.google.com/spreadsheets/d/1f8wvrgqfGcXFAiAXx-p9CgLXo3__IoEn8-Us-uRyfok/edit#gid=0>
 
 ## Welcome
 
