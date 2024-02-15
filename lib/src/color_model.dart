@@ -5,18 +5,26 @@ enum ColorModel {
 
   cmyk,
 
-  /// RRGGBB as double, range [0.0; 1.0] per channel
+  /// R, G, B as double.
+  /// Range [0.0; 1.0] per channel.
   rgb,
 
-  /// RRGGBB as int, range [0; 255] per channel
+  /// R, G, B as int.
+  /// Range [0; 255] per channel.
   rgbInt8,
 
-  /// RRGGBB as hexdecimal string with prefix `#`
-  rgbString,
+  /// R, G, B as 24 bits hexdecimal string.
+  rgbInt8String,
 
+  /// H, S, L as double.
+  /// Range [0.0; 1.0] per channel.
   hsl,
 
+  /// H, S, V as double.
+  /// Range [0.0; 1.0] per channel.
   hsv,
 
+  /// X, Y, Z as double.
+  /// See https://en.wikipedia.org/wiki/CIE_1931_color_space
   xyz,
 }

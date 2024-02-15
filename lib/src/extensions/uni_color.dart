@@ -1,53 +1,86 @@
 part of '../../uni_color_name.dart';
 
-/// ! All extensions processing a color like
+/// A template for naming convertors:
+///   - `typeToType`
+///   - `typeToModelType`
+///   - `modelTypeToType`
+/// We discard `uni`.
 extension ColorNameUniColorExt on UniColor {
+  /// Access to model.
+  ColorModel get model => $1;
+
+  /// See [ColorNameUniColorShortExt.withModel].
+  UniColorShort get withoutModel => ($2, $3, $4);
+
+  // TODO(sign): C convertToModel<C>(ColorModel model) => ...
+
   /// Round to integers.
   /// Alias [colorToIntColor].
-  IntUniColor get colorToRound => (
-        $1.roundToDecimals(0).round(),
+  IntColor get colorToRound => (
+        model,
         $2.roundToDecimals(0).round(),
-        $3.roundToDecimals(0).round()
+        $3.roundToDecimals(0).round(),
+        $4.roundToDecimals(0).round()
       );
 
   /// Alias [colorToRound].
-  IntUniColor get colorToIntColor => colorToRound;
+  IntColor get colorToIntColor => colorToRound;
 
   /// Round by defined decimal places.
   UniColor colorToRoundDecimals(int decimals) => decimals < 0
       ? this
       : (
-          $1.roundToDecimals(decimals),
+          model,
           $2.roundToDecimals(decimals),
-          $3.roundToDecimals(decimals)
+          $3.roundToDecimals(decimals),
+          $4.roundToDecimals(decimals)
         );
 
-  IntUniColor colorToScaledIntColor(int k) =>
-      ($1 * k, $2 * k, $3 * k).colorToRound;
+  IntColor colorToScaledIntColor(int k) =>
+      (model, $2 * k, $3 * k, $4 * k).colorToRound;
 
-  int get colorToRgb8Int => colorToScaledIntColor(255).intColorToRgb8Int;
+  int get colorToRgbInt8 => colorToScaledIntColor(255).intColorToRgbInt8;
 
-  List<int> get colorToListRgb8Int => [
-        ($1 * 255).round(),
+  List<int> get colorToListRgbInt8 => [
         ($2 * 255).round(),
         ($3 * 255).round(),
+        ($4 * 255).round(),
       ];
 }
 
-extension ColorNameIntUniColorExt on IntUniColor {
+extension ColorNameUniColorShortExt on UniColorShort {
+  /// See [ColorNameUniColorExt.withoutModel].
+  UniColor withModel(ColorModel model) => (model, $1, $2, $3);
+}
+
+extension ColorNameIntUniColorExt on IntColor {
+  /// Access to model.
+  ColorModel get model => $1;
+
+  /// See [ColorNameIntColorShortExt.withModel].
+  IntColorShort get withoutModel => ($2, $3, $4);
+
+  // TODO(sign): C convertToModel<C>(ColorModel model) => ...
+
   /// Convert to doubles.
-  UniColor get intColorToColor => ($1.toDouble(), $2.toDouble(), $3.toDouble());
+  UniColor get intColorToColor =>
+      (model, $2.toDouble(), $3.toDouble(), $4.toDouble());
 
   UniColor scaleToDoubleColor(double k, [int decimals = 0]) =>
-      ($1 / k, $2 / k, $3 / k).colorToRoundDecimals(decimals);
+      (model, $2 / k, $3 / k, $4 / k).colorToRoundDecimals(decimals);
 
-  int get intColorToRgb8Int => intColorToListRgb8Int.listRgb8IntToRgb8Int;
+  int get intColorToRgbInt8 => intColorToListRgbInt8.listRgbInt8ToRgbInt8;
 
-  List<int> get intColorToListRgb8Int => [$1, $2, $3];
+  List<int> get intColorToListRgbInt8 => [$2, $3, $4];
+}
+
+extension ColorNameIntColorShortExt on IntColorShort {
+  /// See [ColorNameUniColorExt.withoutModel].
+  IntColor withModel(ColorModel model) => (model, $1, $2, $3);
 }
 
 extension ColorNameListIntExt on List<int> {
-  int get listRgb8IntToRgb8Int =>
+  int get listRgbInt8ToRgbInt8 =>
       (((this[0] & 0xff) << 16) |
           ((this[1] & 0xff) << 8) |
           ((this[2] & 0xff) << 0)) &
@@ -55,5 +88,5 @@ extension ColorNameListIntExt on List<int> {
 }
 
 extension ColorNameIntExt on int {
-  String get intToRgbString => toRadixString(16).padLeft(8, '0');
+  String get intToRgbInt8String => toRadixString(16).padLeft(8, '0');
 }

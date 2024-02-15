@@ -1,18 +1,21 @@
 part of '../uni_color_name.dart';
 
-abstract class ColorName<T, P extends Palette<T>> {
+/// [C] Full color representation.
+abstract class ColorName<C, P extends Palette<C>> {
   const ColorName({required this.palette});
 
   final P palette;
 
+  ColorModel get model => palette.model;
+
   /// A value of color by [name].
   /// Use a [ColorNameOnStringExt.normalizedNameColor] for search.
-  T? value(String name) =>
+  C? value(String name) =>
       palette.map[name] ?? palette.map[name.normalizedNameColor];
 
-  /// A name of color by [value].
-  /// Match with respects to [decimalPlaces].
-  String? name(T value, {int decimalPlaces = -1});
+  /// A name of color by [value] with model (full color represenation).
+  /// Match with respects to [decimals].
+  String? name<A>(A value, {int decimals = -1});
 }
 
 /// A class for work with [UniPalette] and [UniColor] defined into [palette].
@@ -23,11 +26,20 @@ class UniColorName extends ColorName<UniColor, UniPalette> {
   });
 
   @override
-  String? name(UniColor value, {int decimalPlaces = -1}) {
+  String? name<A>(A value, {int decimals = -1}) => switch (value) {
+        UniColor c => _name(c, decimals: decimals),
+        UniColorShort cs => _name(cs.withModel(model), decimals: decimals),
+        _ => null,
+      };
+
+  String? _name(UniColor value, {int decimals = -1}) {
+    // TODO(sign): Convert between models.
+    assert(model == value.model, 'Different models. TODO');
+
     for (final e in palette.map.entries) {
       // match with precission
-      if (e.value.colorToRoundDecimals(decimalPlaces) ==
-          value.colorToRoundDecimals(decimalPlaces)) {
+      if (e.value.colorToRoundDecimals(decimals) ==
+          value.colorToRoundDecimals(decimals)) {
         return e.key;
       }
     }
