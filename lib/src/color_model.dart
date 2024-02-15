@@ -1,6 +1,6 @@
 part of '../uni_color_name.dart';
 
-/// TODO(sign): Range chacker for each model.
+/// TODO(sign): Range checker for each model.
 enum ColorModel {
   unspecified(),
 
