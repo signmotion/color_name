@@ -1003,5 +1003,6 @@ General questions are best asked on
 - Optimize a search.
 - Fuzzy search by name.
 - Fuzzy search by value.
+- Range checker to each model.
 - `operator[]` for getting a value by color name and vice versa.
 - More palettes. See [link](https://en.wikipedia.org/wiki/List_of_colors:_A%E2%80%93F).
