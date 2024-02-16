@@ -10,21 +10,6 @@ abstract class Palette<T> {
   ColorModel get model;
 }
 
-/// The universal value for color as a record of double values.
-/// See [IntColor], [ColorModel].
-/// `Uni` means `double`.
-typedef UniColor = (ColorModel, double, double, double);
-typedef UniColorShort = (double, double, double);
-
-/// The universal value for color as a record of integer values.
-/// See [UniColor], [ColorModel].
-/// `Uni` means `double` therefore `Int` replaces `Uni`.
-typedef IntColor = (ColorModel, int, int, int);
-typedef IntColorShort = (int, int, int);
-
-/// The color with RGB channels as Dart [int] value.
-//typedef rgb8IntColor = int; - Don't hide the types. [int] is enought.
-
 /// The universal palette for represent any color as double values.
 /// Use [ColorModel.rgb] with range double [0.0; 1.0].
 /// `Uni` means `double`.
