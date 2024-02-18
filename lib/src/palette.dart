@@ -29,11 +29,14 @@ class UniPalette<T extends Object> extends Palette<UniColor<T>> {
       throw UnimplementedError();
     }
 
-    final s = WFile(path)
-        .readAsJsonListT<List<dynamic>>()!
-        .map((c) => c.map((v) => v as int).toList());
+    final l = WFile(path).readAsJsonListListT<int>()!;
+    if (l.length < 2) {
+      throw ArgumentError(
+          'The palette file should contain 2 or more colors. We have: $l');
+    }
+
     final list =
-        s.map((c) => c.colorRgbToUniColorShort<T>().withModel(ColorModel.rgb));
+        l.map((c) => c.colorRgbToUniColorShort<T>().withModel(ColorModel.rgb));
     final map = {for (var c in list) c.colorRgbToStringRgb: c};
 
     return UniPalette(map);
