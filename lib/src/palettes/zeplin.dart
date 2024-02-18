@@ -1,7 +1,7 @@
 part of '../../uni_color_name.dart';
 
 /// Thanks: https://github.com/zeplin/zeplin-palette/tree/master
-const zeplinMapRgb = <String, UniColor>{
+const zeplinMapRgb = <String, UniColor<double>>{
   'black': (ColorModel.rgb, 0, 0, 0),
   'very dark blue': (ColorModel.rgb, 0, 0.00392156862745098, 0.2),
   'dark navy blue': (ColorModel.rgb, 0, 0.00784313725490196, 0.180392156862745),

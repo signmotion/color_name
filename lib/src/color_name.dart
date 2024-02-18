@@ -1,7 +1,7 @@
 part of '../uni_color_name.dart';
 
 /// [C] Full color representation.
-abstract class ColorName<C, P extends Palette<C>> {
+abstract class ColorName<C extends Object, P extends Palette<C>> {
   const ColorName({required this.palette});
 
   final P palette;
@@ -20,21 +20,20 @@ abstract class ColorName<C, P extends Palette<C>> {
 
 /// A class for work with [UniPalette] and [UniColor] defined into [palette].
 /// If [palette] is not defined use [UniPalette] with all known palettes.
-class UniColorName extends ColorName<UniColor, UniPalette> {
-  const UniColorName({
-    super.palette = const UniPalette(Palletes.all),
-  });
+class UniColorName<T extends Object>
+    extends ColorName<UniColor<T>, UniPalette<T>> {
+  const UniColorName({required super.palette});
 
   @override
   String? name<A>(A value, {int decimals = -1}) => switch (value) {
-        UniColor c => _name(c, decimals: decimals),
-        UniColorShort cs => _name(cs.withModel(model), decimals: decimals),
+        UniColor<T> c => _name(c, decimals: decimals),
+        UniColorShort<T> cs => _name(cs.withModel(model), decimals: decimals),
         _ => throw ArgumentError(
             'A `value` should be `UniColor` or `UniColorShort`.'
             ' We have: `${value.runtimeType}`.'),
       };
 
-  String? _name(UniColor value, {int decimals = -1}) {
+  String? _name(UniColor<T> value, {int decimals = -1}) {
     // TODO(sign): Convert between models.
     assert(model == value.model, 'Different models. TODO');
 

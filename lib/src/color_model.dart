@@ -1,6 +1,7 @@
 part of '../uni_color_name.dart';
 
-/// TODO(sign): Range checker for each model.
+/// The [ColorModel] includes only color representation.
+/// See [UniColor] for structure a color.
 enum ColorModel {
   unspecified(),
 
@@ -9,13 +10,6 @@ enum ColorModel {
   /// R, G, B as double.
   /// Range [0.0; 1.0] per channel.
   rgb(),
-
-  /// R, G, B as int.
-  /// Range [0; 255] per channel.
-  rgbInt8(),
-
-  /// R, G, B as 24 bits hexdecimal string.
-  rgbInt8String(),
 
   /// H, S, L as double.
   /// Range [0.0; 1.0] per channel.

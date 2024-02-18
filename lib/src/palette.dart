@@ -1,31 +1,44 @@
 part of '../uni_color_name.dart';
 
-abstract class Palette<T> {
+/// The [C] can be any structure.
+/// See structures into the `README`.
+abstract class Palette<C extends Object> {
   /// ! [map] should contains 1 model.
   const Palette(this.map);
 
-  /// name, any T-declared type
-  final Map<String, T> map;
+  /// name, any [C]-declared type
+  final Map<String, C> map;
 
   ColorModel get model;
+
+  /// Number of colors.
+  int get count => map.length;
+
+  /// A closest color from this palette.
+  //C closest(C color) {}
+
+  /// A distance between colors.
 }
 
-/// The universal palette for represent any color as double values.
-/// Use [ColorModel.rgb] with range double [0.0; 1.0].
-/// `Uni` means `double`.
-class UniPalette extends Palette<UniColor> {
+/// The universal palette for represent any color as a [T]-typed value.
+class UniPalette<T extends Object> extends Palette<UniColor<T>> {
   const UniPalette(super.map);
+
+  factory UniPalette.file(String path, ColorModel model) {
+    if (model != ColorModel.rgb) {
+      throw UnimplementedError();
+    }
+
+    final s = WFile(path)
+        .readAsJsonListT<List<dynamic>>()!
+        .map((c) => c.map((v) => v as int).toList());
+    final list =
+        s.map((c) => c.colorRgbToUniColorShort<T>().withModel(ColorModel.rgb));
+    final map = {for (var c in list) c.colorRgbToStringRgb: c};
+
+    return UniPalette(map);
+  }
 
   @override
   ColorModel get model => map.values.first.model;
-}
-
-/// The universal palette for represent any color as int value.
-/// Use [ColorModel.rgbInt8].
-/// `Uni` means `double` therefore `Int` replaces `Uni`.
-class Int8Palette extends Palette<(ColorModel, int)> {
-  const Int8Palette(super.map);
-
-  @override
-  ColorModel get model => map.values.first.$1;
 }
