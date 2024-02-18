@@ -37,6 +37,67 @@ You can add your own color palette: the class `ColorName` can handle any inherit
 
 The [helper table](https://docs.google.com/spreadsheets/d/1f8wvrgqfGcXFAiAXx-p9CgLXo3__IoEn8-Us-uRyfok/copy).
 
+## Color Converters
+
+The formulas for color conversion are easily programmable, but we have many converters. So let's summarize them into the table:
+
+| 👇 structures    | cmyk | rgb | hsl | hsv | xyz | 👈 models |
+| ---------------- | ---- | --- | --- | --- | --- | --------- |
+| int              |      |     |     |     |     |           |
+| String           |      |     |     |     |     |           |
+| UniColor<double> |      |     |     |     |     |           |
+| UniColor<int>    |      |     |     |     |     |           |
+| Iterable<double> |      |     |     |     |     |           |
+| Iterable<int>    |      |     |     |     |     |           |
+
+TODO A converter name using as extension and constructing by these schema: `color[SourceModel]To[Structure][ResultModel]()`.
+
+For example:
+
+`colorRgbToIntCmyk`
+`colorRgbToInt`
+`colorRgbToIntHsl`
+...
+`colorRgbToStringCmyk`
+`colorRgbToString`
+...
+`colorRgbToUniColorDoubleCmyk`
+`colorRgbToUniColorDouble`
+...
+`colorRgbToUniColorIntCmyk`
+...
+`colorCmykToIterableDoubleRgb`
+`colorCmykToIterableInt`
+...
+`colorRgbToIterableIntHsv`
+`colorXyzToIterableIntXyz`
+
+Examples of using:
+
+```dart
+// as RGB model by default
+0xCC00DE.colorToString();
+
+// represent as XYZ model before transformation
+0xCC00DE.model(ColorModel.hsl).colorToString();
+// or with same result
+0xCC00DE.colorModelHsl.colorToString();
+
+// as RGB model by default
+'cc00de'.colorToInt();
+
+// 255 is a max value for the channel for normalize a color to range [0.0; 1.0]
+[1, 12, 128].colorToUniColorDouble(255);
+// the result will be `(1 / 255, 12 / 255, 128 / 255)`
+
+// but in this case
+[1, 12, 128].colorToUniColorDouble();
+// the result will be `(1.0, 12.0, 128.0)`
+
+[0.1, 0.12, 0.128].colorToUniColorInt(255);
+// the result for this example: `(0.1 * 255, 0.12 * 255, 0.128 * 255)`
+```
+
 ## Welcome
 
 This package is open-source, stable and well-tested. Development happens on
@@ -49,12 +110,18 @@ General questions are best asked on
 ## TODO
 
 - Feautures for this package into `README`.
-- Converters between models. See [1](https://dev.to/bytebodger/determining-the-rgb-distance-between-two-colors-4n91) and [2](https://github.com/MichaelFenwick/Color).
+- Converters between models. See [1](https://pub.dev/packages/color_models), [2](https://dev.to/bytebodger/determining-the-rgb-distance-between-two-colors-4n91), [3](https://github.com/MichaelFenwick/Color).
+- Generalized to `num` instead of `double` and `int`? Reason: reduce a count of extensions.
 - Converters between palettes.
 - How to define your own map for color palette.
 - Optimize a search.
 - Fuzzy search by name.
 - Fuzzy search by value.
 - Range checker to each model.
+- Autodetect a model when constructing a `Palette`.
 - `operator[]` for getting a value by color name and vice versa.
 - More palettes. See [link](https://en.wikipedia.org/wiki/List_of_colors:_A%E2%80%93F).
+
+- The range of values to check the integrity of the color.
+
+- A converter name using as extension and constructing by these schema: `color[SourceModel]To[Structure][ResultModel]()`. For example: `colorRgbToIntCmyk`.
