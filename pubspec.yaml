@@ -22,7 +22,6 @@ environment:
   sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
-  kdtree: ^0.2.0
   wfile:
     path: ../wfile
 

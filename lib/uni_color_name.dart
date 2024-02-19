@@ -2,7 +2,6 @@ library;
 
 import 'dart:math';
 
-import 'package:kdtree/kdtree.dart';
 import 'package:wfile/wfile.dart';
 
 part 'src/extensions/double.dart';
