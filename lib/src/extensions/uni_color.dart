@@ -163,6 +163,9 @@ extension ColorNameUniColorDoubleExt on UniColor<double> {
 /// `color[SourceModel]To[Structure][ResultModel]()`
 extension ColorNameUniColorIntExt on UniColor<int> {
   int get colorRgbToIntRgb => colorToList.colorRgbToIntRgb;
+
+  /// Returns a 1-dimension index for the channel range [0; 255].
+  int get i255 => $2 + $3 * 255 + $4 * 255 * 255;
 }
 
 extension ColorNameUniColorShortExt<T> on UniColorShort<T> {
