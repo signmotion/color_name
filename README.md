@@ -10,7 +10,8 @@ The easy-to-use and well-tested library.
 ## Usage
 
 ```dart
-const c = UniColorName();
+final palette = UniPalette(PalettesMaps.zeplin);
+final c = UniColorName(palette);
 print(c.value('forrest green'));
 print(c.name((0.08, 0.27, 0.02), decimals: 2));
 ```

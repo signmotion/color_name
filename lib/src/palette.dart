@@ -88,6 +88,7 @@ class UniPalette<T extends Object> extends Palette<UniColor<T>> {
   KDTree? _kdtree;
   List<Map<String, dynamic>>? _points;
 
+  /// See [closest].
   (String, UniColor<T>) closestSlow(UniColor<T> color, ColorDistance<T> cd) {
     // respect JavaScript limitation
     final maxIntValue = pow(2, 53).round() - 1;
@@ -100,8 +101,6 @@ class UniPalette<T extends Object> extends Palette<UniColor<T>> {
         found = e;
       }
     }
-
-    // TODO(sign): optimize Bake the colors to quad-tree.
 
     return (found.key, found.value);
   }

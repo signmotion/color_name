@@ -2,7 +2,7 @@ part of '../uni_color_name.dart';
 
 /// [C] Full color representation.
 abstract class ColorName<C extends Object, P extends Palette<C>> {
-  const ColorName({required this.palette});
+  const ColorName(this.palette);
 
   final P palette;
 
@@ -22,7 +22,7 @@ abstract class ColorName<C extends Object, P extends Palette<C>> {
 /// If [palette] is not defined use [UniPalette] with all known palettes.
 class UniColorName<T extends Object>
     extends ColorName<UniColor<T>, UniPalette<T>> {
-  const UniColorName({required super.palette});
+  const UniColorName(super.palette);
 
   @override
   String? name<A>(A value, {int decimals = -1}) => switch (value) {
