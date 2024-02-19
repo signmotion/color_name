@@ -3,8 +3,8 @@ import 'package:test/test.dart';
 
 void main() {
   group('UniColorName', () {
-    const palette = UniPalette(PalettesMaps.zeplin);
-    const c = UniColorName(palette: palette);
+    final palette = UniPalette(PalettesMaps.zeplin);
+    final c = UniColorName(palette: palette);
     const forrestGreenName = 'forrest green';
     const forrestGreenValue = (
       ColorModel.rgb,
