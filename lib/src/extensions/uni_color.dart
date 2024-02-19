@@ -162,10 +162,14 @@ extension ColorNameUniColorDoubleExt on UniColor<double> {
 /// A template for naming convertors:
 /// `color[SourceModel]To[Structure][ResultModel]()`
 extension ColorNameUniColorIntExt on UniColor<int> {
+  /// Divide by [k].
+  UniColor<double> colorToScaleDoubleColor(double k, [int decimals = 0]) =>
+      (model, $2 / k, $3 / k, $4 / k).colorToRoundDecimals(decimals);
+
   int get colorRgbToIntRgb => colorToList.colorRgbToIntRgb;
 
   /// Returns a 1-dimension index for the channel range [0; 255].
-  int get i255 => $2 + $3 * 255 + $4 * 255 * 255;
+  int get i256 => $2 + $3 * 256 + $4 * 256 * 256;
 }
 
 extension ColorNameUniColorShortExt<T> on UniColorShort<T> {
@@ -174,8 +178,10 @@ extension ColorNameUniColorShortExt<T> on UniColorShort<T> {
 }
 
 extension ColorNameListExt<T> on List<T> {
-  UniColorShort<T> colorRgbToUniColorShort<T>() =>
-      (this[0] as T, this[1] as T, this[2] as T);
+  UniColorShort<T> get colorRgbToUniColorShort => (this[0], this[1], this[2]);
+
+  UniColor<T> get colorRgbToUniColorRgb =>
+      (ColorModel.rgb, this[0], this[1], this[2]);
 }
 
 extension ColorNameListIntExt on List<int> {
