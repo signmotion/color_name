@@ -6,6 +6,7 @@ import 'package:kdtree/kdtree.dart';
 import 'package:wfile/wfile.dart';
 
 part 'src/extensions/double.dart';
+part 'src/extensions/palette.dart';
 part 'src/extensions/string.dart';
 part 'src/extensions/uni_color.dart';
 
