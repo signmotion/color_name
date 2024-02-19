@@ -9,15 +9,15 @@ abstract class Palette<C extends Object> {
   /// name, any [C]-declared type
   final Map<String, C> map;
 
-  ColorModel get model;
-
   /// Number of colors.
   int get count => map.length;
 
-  /// A closest color from this palette.
-  //C closest(C color) {}
+  ColorModel get model;
 
-  /// A distance between colors.
+  /// A closest color from this palette.
+  /// See [ColorDistance].
+  /// <name, C>
+  (String, C) closest(C color, ColorDistance cd);
 }
 
 /// The universal palette for represent any color as a [T]-typed value.
@@ -29,7 +29,11 @@ class UniPalette<T extends Object> extends Palette<UniColor<T>> {
       throw UnimplementedError();
     }
 
-    final l = WFile(path).readAsJsonListListT<int>()!;
+    final l = WFile(path).readAsJsonListListT<int>();
+    if (l == null) {
+      throw ArgumentError('The file `$path` not found.');
+    }
+
     if (l.length < 2) {
       throw ArgumentError(
           'The palette file should contain 2 or more colors. We have: $l');
@@ -44,4 +48,23 @@ class UniPalette<T extends Object> extends Palette<UniColor<T>> {
 
   @override
   ColorModel get model => map.values.first.model;
+
+  @override
+  (String, UniColor<T>) closest(UniColor<T> color, ColorDistance cd) {
+    // respect JavaScript limitation
+    final maxIntValue = pow(2, 53).round() - 1;
+    var min = maxIntValue.toDouble();
+    late MapEntry<String, UniColor<T>> found;
+    for (final e in map.entries) {
+      final d = cd.distance(color, e.value);
+      if (d < min) {
+        min = d;
+        found = e;
+      }
+    }
+
+    // TODO(sign): optimize Bake the colors to quad-tree.
+
+    return (found.key, found.value);
+  }
 }
