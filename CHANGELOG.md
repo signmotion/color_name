@@ -3,9 +3,15 @@
 All notable changes to the project `UniColorName` will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## NEXT
+## 0.3.0
 
-- Closest color.
+- Generalized `UniColor` and `Palette`.
+- Closest color with various color distance formulas.
+- Introduced converters to `UniPalette`. WIP.
+- Introduced the factory `UniPalette.list()`.
+- Introduced `UniColor<int>.i256`: returns a 1-dimension index for the channel range [0; 255].
+- Stabilized `UniPalette.file()`.
+- Updated `README`.
 
 ## 0.2.0
 
