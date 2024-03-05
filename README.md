@@ -111,6 +111,16 @@ or create a pull-request there.
 General questions are best asked on
 [StackOverflow](https://stackoverflow.com/questions/tagged/uni_color_name).
 
+## Resources
+
+Working on this project, I found amazing resources and am grateful to the authors:
+
+- <https://thecolorapi.com>
+  Pass in any valid color and get conversion into any other format, the name of the color, placeholder images and a multitude of schemes.
+- <https://colorhexmap.com>
+  Get Ready to Explore a World of Color.
+- <https://en.m.wikipedia.org/wiki/List_of_color_palettes>
+
 ## TODO
 
 - Feautures for this package into `README`.
@@ -124,7 +134,7 @@ General questions are best asked on
 - Range checker to each model.
 - Autodetect a model when constructing a `Palette`.
 - `operator[]` for getting a value by color name and vice versa.
-- More palettes. See [link](https://en.wikipedia.org/wiki/List_of_colors:_A%E2%80%93F).
+- More palettes. See [1](https://en.wikipedia.org/wiki/List_of_colors:_A%E2%80%93F), [2](https://en.m.wikipedia.org/wiki/List_of_color_palettes), [3](https://en.wikipedia.org/wiki/Lists_of_colors).
 
 - The range of values to check the integrity of the color.
 
