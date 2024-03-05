@@ -3,7 +3,6 @@ description: >-
   Identifies the value of a color by name and vice versa. Knows over 900 color names.
   The easy-to-use and well-tested library.
 repository: https://github.com/signmotion/uni_color_name
-publish_to: none
 topics:
   - identify
   - color
