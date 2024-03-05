@@ -6,6 +6,7 @@
 
 Identifies the value of a color by name and vice versa. Knows over 900 color names.
 The easy-to-use and well-tested library.
+Feel free to use it in your projects.
 
 ## Usage
 
@@ -42,14 +43,14 @@ The [helper table](https://docs.google.com/spreadsheets/d/1f8wvrgqfGcXFAiAXx-p9C
 
 The formulas for color conversion are easily programmable, but we have many converters. So let's summarize them into the table:
 
-| 👇 structures    | cmyk | rgb | hsl | hsv | xyz | 👈 models |
-| ---------------- | ---- | --- | --- | --- | --- | --------- |
-| int              |      |     |     |     |     |           |
-| String           |      |     |     |     |     |           |
-| UniColor<double> |      |     |     |     |     |           |
-| UniColor<int>    |      |     |     |     |     |           |
-| Iterable<double> |      |     |     |     |     |           |
-| Iterable<int>    |      |     |     |     |     |           |
+| 👇 structures      | cmyk | rgb | hsl | hsv | xyz | 👈 models |
+| ------------------ | ---- | --- | --- | --- | --- | --------- |
+| int                |      |     |     |     |     |           |
+| String             |      |     |     |     |     |           |
+| UniColor\<double\> |      |     |     |     |     |           |
+| UniColor\<int\>    |      |     |     |     |     |           |
+| Iterable\<double\> |      |     |     |     |     |           |
+| Iterable\<int\>    |      |     |     |     |     |           |
 
 TODO A converter name using as extension and constructing by these schema: `color[SourceModel]To[Structure][ResultModel]()`.
 
@@ -100,6 +101,8 @@ Examples of using:
 ```
 
 ## Welcome
+
+Requests and suggestions are warmly welcome.
 
 This package is open-source, stable and well-tested. Development happens on
 [GitHub](https://github.com/signmotion/uni_color_name). Feel free to report issues
