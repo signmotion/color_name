@@ -151,4 +151,9 @@ Working on this project, I found amazing resources and am grateful to the author
 - HKS color system. <https://en.m.wikipedia.org/wiki/HKS_(colour_system)>
 - Natural color system. <https://en.m.wikipedia.org/wiki/Natural_Color_System>
 
+- Color blind friendly palettes. <https://commons.wikimedia.org/wiki/Commons:Creating_accessible_illustrations>
+
 - Color characteristics? For ex., LRV: <https://en.m.wikipedia.org/wiki/Light_reflectance_value> -> <https://thelandofcolor.com/lrv-light-reflectance-value-of-paint-colors>
+  CR: <https://en.m.wikipedia.org/wiki/Color_rendering_index>
+
+- Articles from <https://en.m.wikipedia.org/wiki/Index_of_color-related_articles>.
