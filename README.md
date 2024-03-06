@@ -139,3 +139,7 @@ Working on this project, I found amazing resources and am grateful to the author
 - The range of values to check the integrity of the color.
 
 - A converter name using as extension and constructing by these schema: `color[SourceModel]To[Structure][ResultModel]()`. For example: `colorRgbToIntCmyk`.
+
+- Colors with transparent. <https://ftp.pwg.org/pub/pwg/candidates/cs-pwgmsn20-20130328-5101.1.pdf>
+
+- Sources for color palettes.
