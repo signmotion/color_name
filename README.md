@@ -143,3 +143,12 @@ Working on this project, I found amazing resources and am grateful to the author
 - Colors with transparent. <https://ftp.pwg.org/pub/pwg/candidates/cs-pwgmsn20-20130328-5101.1.pdf>
 
 - Sources for color palettes.
+
+- Pantone. <https://en.m.wikipedia.org/wiki/Pantone>
+- Freetone. <https://en.m.wikipedia.org/wiki/Stuart_Semple#Freetone>
+
+- RAL color system. <https://en.m.wikipedia.org/wiki/List_of_RAL_colours>
+- HKS color system. <https://en.m.wikipedia.org/wiki/HKS_(colour_system)>
+- Natural color system. <https://en.m.wikipedia.org/wiki/Natural_Color_System>
+
+- Color characteristics? For ex., LRV: <https://en.m.wikipedia.org/wiki/Light_reflectance_value> -> <https://thelandofcolor.com/lrv-light-reflectance-value-of-paint-colors>
