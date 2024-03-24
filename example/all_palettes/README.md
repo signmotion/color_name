@@ -1,7 +1,5 @@
 # Example
 
-See also `all_palettes` forlder with Flutter example.
-
 ## Getting Started
 
 This is a starting point for the examples of this package.
