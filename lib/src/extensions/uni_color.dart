@@ -84,32 +84,11 @@ extension ColorNameUniColorExt<T> on UniColor<T> {
   /// See [ColorNameUniColorShortExt.withModel].
   UniColorShort<T> get withoutModel => ($2, $3, $4);
 
-  /// Convert to [UniColor] doubles.
-  UniColor<double> get colorToUniColorDouble => switch (this) {
-        UniColor<double> c => c,
-        UniColor<int> c => (
-            c.model,
-            c.$2.toDouble(),
-            c.$3.toDouble(),
-            c.$4.toDouble()
-          ),
-        UniColor<String> c => throw UnimplementedError('$c'),
-        _ => throw UnsupportedError('$runtimeType'),
-      };
-
-  /// Convert to [UniColor] integers.
-  UniColor<int> get colorToUniColorInt => switch (this) {
-        UniColor<double> c => c.colorToRound,
-        UniColor<int> c => c,
-        UniColor<String> c => throw UnimplementedError('$c'),
-        _ => throw UnsupportedError('$runtimeType'),
-      };
-
   List<T> get colorToList => [$2, $3, $4];
 
   String get colorRgbToStringRgb => switch (this) {
-        UniColor<int> c => c.colorRgbToIntRgb.colorRgbToStringRgb,
-        UniColor<double> c => c.colorToScaledIntColor(255).colorRgbToStringRgb,
+        UniColor<int> c => c.colorRgbToInt8Rgb.colorRgbToStringRgb,
+        UniColor<double> c => c.colorToScaledIntKColor(255).colorRgbToStringRgb,
         UniColor<String> c => '${c.red.padLeft(2, '0')}'
             '${c.green.padLeft(2, '0')}'
             '${c.blue.padLeft(2, '0')}',
@@ -149,14 +128,17 @@ extension ColorNameUniColorDoubleExt on UniColor<double> {
         );
 
   /// Multiply by [k].
-  UniColor<int> colorToScaledIntColor(int k) =>
+  UniColor<int> colorToScaledIntKColor(int k) =>
       (model, $2 * k, $3 * k, $4 * k).colorToRound;
 
   /// Divide by [k].
   UniColor<double> colorToScaleDoubleColor(double k, [int decimals = 0]) =>
       (model, $2 / k, $3 / k, $4 / k).colorToRoundDecimals(decimals);
 
-  int get colorRgbToIntRgb => colorToScaledIntColor(255).colorRgbToIntRgb;
+  /// Convert to [UniColor] integers [0; 255].
+  UniColor<int> get colorRgbToUniColorInt8Rgb => colorToScaledIntKColor(255);
+
+  int get colorRgbToInt8Rgb => colorRgbToUniColorInt8Rgb.colorRgbToInt8Rgb;
 }
 
 /// A template for naming convertors:
@@ -166,10 +148,14 @@ extension ColorNameUniColorIntExt on UniColor<int> {
   UniColor<double> colorToScaleDoubleColor(double k, [int decimals = 0]) =>
       (model, $2 / k, $3 / k, $4 / k).colorToRoundDecimals(decimals);
 
-  int get colorRgbToIntRgb => colorToList.colorRgbToIntRgb;
+  /// Convert to [UniColor] doubles.
+  UniColor<double> get colorToUniColorDouble =>
+      (model, $2.toDouble(), $3.toDouble(), $4.toDouble());
+
+  int get colorRgbToInt8Rgb => colorToList.colorRgbToInt8Rgb;
 
   /// Returns a 1-dimension index for the channel range [0; 255].
-  int get i256 => $2 + $3 * 256 + $4 * 256 * 256;
+  int get index256 => $2 + $3 * 256 + $4 * 256 * 256;
 }
 
 extension ColorNameUniColorShortExt<T> on UniColorShort<T> {
@@ -185,7 +171,8 @@ extension ColorNameListExt<T> on List<T> {
 }
 
 extension ColorNameListIntExt on List<int> {
-  int get colorRgbToIntRgb =>
+  /// One channel has 8 bits.
+  int get colorRgbToInt8Rgb =>
       (((this[0] & 0xff) << 16) |
           ((this[1] & 0xff) << 8) |
           ((this[2] & 0xff) << 0)) &

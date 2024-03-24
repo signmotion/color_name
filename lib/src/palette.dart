@@ -32,7 +32,7 @@ class UniPalette<T extends Object> extends Palette<UniColor<T>> {
       throw ArgumentError('The file `$path` not found.');
     }
 
-    final list = l.map((c) => c.colorRgbToIntRgb);
+    final list = l.map((c) => c.colorRgbToInt8Rgb);
 
     return UniPalette.list(list as Iterable<T>, model);
   }

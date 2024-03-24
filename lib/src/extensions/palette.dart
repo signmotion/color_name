@@ -6,7 +6,7 @@ extension UniPaletteDoubleExt on UniPalette<double> {
   UniPalette<int> get paletteToUniPaletteInt => UniPalette(
         map.map((name, c) => MapEntry(
               name,
-              c.colorToScaledIntColor(255),
+              c.colorToScaledIntKColor(255),
             )),
       );
 }
