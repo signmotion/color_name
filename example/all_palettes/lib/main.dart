@@ -12,8 +12,12 @@ class App extends StatelessWidget {
           appBar: AppBar(title: const Text('UniColorName Palettes')),
           body: SingleChildScrollView(
             child: Wrap(
+              alignment: WrapAlignment.center,
               children: [
-                Text('The palette contains ${palette.count} colors'),
+                Text(
+                  'The palette Zeplin contains ${palette.count} colors',
+                  textScaler: const TextScaler.linear(1.5),
+                ),
                 for (final name in palette.map.keys.toList()..sort())
                   Glass(
                     name: name,
