@@ -2,11 +2,21 @@
 
 ![Cover - Unifying Color Name](https://raw.githubusercontent.com/signmotion/uni_color_name/master/images/cover.webp)
 
-[![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/signmotion/uni_color_name/master/LICENSE)
+[![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Pub Package](https://img.shields.io/pub/v/uni_color_name.svg?logo=dart&logoColor=00b9fc&color=blue)](https://pub.dartlang.org/packages/uni_color_name)
+[![Code Size](https://img.shields.io/github/languages/code-size/signmotion/uni_color_name?logo=github&logoColor=white)](https://github.com/signmotion/uni_color_name)
+[![Publisher](https://img.shields.io/pub/publisher/uni_color_name)](https://pub.dev/publishers/syrokomskyi.com)
+
+[![Build Status](https://img.shields.io/github/actions/workflow/status/signmotion/uni_color_name/dart-ci.yml?logo=github-actions&logoColor=white)](https://github.com/signmotion/uni_color_name/actions)
+[![Pull Requests](https://img.shields.io/github/issues-pr/signmotion/uni_color_name?logo=github&logoColor=white)](https://github.com/signmotion/uni_color_name/pulls)
+[![Issues](https://img.shields.io/github/issues/signmotion/uni_color_name?logo=github&logoColor=white)](https://github.com/signmotion/uni_color_name/issues)
+[![Pub Score](https://img.shields.io/pub/points/uni_color_name?logo=dart&logoColor=00b9fc)](https://pub.dev/packages/uni_color_name/score)
 
 Identifies the value of a color by name and vice versa. Knows over 900 color names.
 The easy-to-use and well-tested library.
-Feel free to use it in your projects.
+Feel free to use it in your awesome projects.
+
+Share some ❤️ and star repo to support the project.
 
 ## Usage
 
@@ -23,6 +33,8 @@ Output:
 (rgb, 0.0823529411764706, 0.266666666666667, 0.0235294117647059)
 forrest green
 ```
+
+See also `example/all_palettes` forlder with Flutter example that visualize a palette.
 
 ## Colors
 
@@ -41,9 +53,9 @@ The [helper table](https://docs.google.com/spreadsheets/d/1f8wvrgqfGcXFAiAXx-p9C
 
 ## Color Converters
 
-The formulas for color conversion are easily programmable, but we have many converters. So let's summarize them into the table:
+The formulas for color conversion are easily programmable, but we have many converters. So let's summarize them into the table (TODO):
 
-| 👇 structures      | cmyk | rgb | hsl | hsv | xyz | 👈 models |
+| ⬇️ structures      | cmyk | rgb | hsl | hsv | xyz | ⬅️ models |
 | ------------------ | ---- | --- | --- | --- | --- | --------- |
 | int                |      |     |     |     |     |           |
 | String             |      |     |     |     |     |           |
@@ -157,3 +169,5 @@ Working on this project, I found amazing resources and am grateful to the author
   CR: <https://en.m.wikipedia.org/wiki/Color_rendering_index>
 
 - Articles from <https://en.m.wikipedia.org/wiki/Index_of_color-related_articles>.
+
+Created [with ❤️](https://syrokomskyi.com)
