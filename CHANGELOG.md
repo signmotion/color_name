@@ -3,6 +3,10 @@
 All notable changes to the project `UniColorName` will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.4.1
+
+- Fixed CI.
+
 ## 0.4.0
 
 - Provided `Palette.operator[](String colorName)`.
