@@ -14,6 +14,9 @@ abstract class Palette<C extends Object> {
 
   ColorModel get model;
 
+  /// Color [C] by name.
+  C? operator [](String colorName) => map[colorName];
+
   /// A closest color from this palette.
   /// See [ColorDistance].
   /// <name, C>
