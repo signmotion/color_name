@@ -3,6 +3,15 @@
 All notable changes to the project `UniColorName` will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.4.0
+
+- Provided `Palette.operator[](String colorName)`.
+- Some color conversion extensions have been renamed.
+- Added a Flutter example with visualize palette `Zeplin`.
+- Enhanced `README`.
+- Added some TODOs.
+- Added CI.
+
 ## 0.3.0
 
 - Generalized `UniColor` and `Palette`.

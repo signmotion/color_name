@@ -149,10 +149,10 @@ packages:
     dependency: transitive
     description:
       name: json_dart
-      sha256: debc7f3cfaaf81383ac1370fd435b317eca9977927b310ea8922e0e448bb3e13
+      sha256: "9ab4066092d5be0031dbc610f7b9237afd919eca4f1241c18e2dfbc0d4f47c84"
       url: "https://pub.dev"
     source: hosted
-    version: "0.1.0"
+    version: "0.1.1"
   lints:
     dependency: "direct dev"
     description:
@@ -381,10 +381,10 @@ packages:
     dependency: transitive
     description:
       name: vm_service
-      sha256: e7d5ecd604e499358c5fe35ee828c0298a320d54455e791e9dcf73486bc8d9f0
+      sha256: a75f83f14ad81d5fe4b3319710b90dec37da0e22612326b696c9e1b8f34bbf48
       url: "https://pub.dev"
     source: hosted
-    version: "14.1.0"
+    version: "14.2.0"
   watcher:
     dependency: transitive
     description:
@@ -397,10 +397,10 @@ packages:
     dependency: transitive
     description:
       name: web
-      sha256: "1d9158c616048c38f712a6646e317a3426da10e884447626167240d45209cbad"
+      sha256: "97da13628db363c635202ad97068d47c5b8aa555808e7a9411963c533b449b27"
       url: "https://pub.dev"
     source: hosted
-    version: "0.5.0"
+    version: "0.5.1"
   web_socket_channel:
     dependency: transitive
     description:
@@ -421,10 +421,10 @@ packages:
     dependency: "direct main"
     description:
       name: wfile
-      sha256: "76cd5440b6eaa6dd35a404b9d32b2dc7ed4c929616d28e1f8d664e77efe36c57"
+      sha256: "2be73888b0c625426947c90fa8b54f7dc7e6e031673c6baea1de8a17b890e93f"
       url: "https://pub.dev"
     source: hosted
-    version: "0.4.0"
+    version: "0.4.1"
   xml:
     dependency: transitive
     description:
