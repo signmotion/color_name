@@ -36,6 +36,8 @@ forrest green
 
 See also `example/all_palettes` forlder with Flutter example that visualize a palette.
 
+[<img src="https://raw.githubusercontent.com/signmotion/uni_color_name/master/images/screenshots/zeplin_palette.webp" width="600"/>](https://raw.githubusercontent.com/signmotion/uni_color_name/master/images/screenshots/zeplin_palette.webp)
+
 ## Colors
 
 <details>
