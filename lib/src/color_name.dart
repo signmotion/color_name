@@ -28,9 +28,15 @@ class UniColorName<T extends Object>
   String? name<A>(A value, {int decimals = -1}) => switch (value) {
         UniColor<T> c => _name(c, decimals: decimals),
         UniColorShort<T> cs => _name(cs.withModel(model), decimals: decimals),
-        _ => throw ArgumentError(
-            'A `value` should be `UniColor` or `UniColorShort`.'
-            ' We have: `${value.runtimeType}`.'),
+        UniColorNoAlpha<double> c => name(c.withAlpha(), decimals: decimals),
+        UniColorNoAlpha<int> c => name(c.withAlpha(), decimals: decimals),
+        UniColorShortNoAlpha<double> c =>
+          name(c.withAlpha(), decimals: decimals),
+        UniColorShortNoAlpha<int> c => name(c.withAlpha(), decimals: decimals),
+        _ =>
+          throw ArgumentError('A `value` should be `UniColor`, `UniColorShort`'
+              ' or their "no alpha" variant.'
+              ' We have: `${value.runtimeType}`.'),
       };
 
   String? _name(UniColor<T> value, {int decimals = -1}) {

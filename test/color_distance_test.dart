@@ -6,17 +6,17 @@ void main() {
     test('RgbColorSqrtDistance', () {
       const cd = RgbColorSqrtDistance<int>();
 
-      final a = 0x000000.colorRgbToUniColorRgb<int>();
-      final b = 0xffffff.colorRgbToUniColorRgb<int>();
-      expect(cd.distance(a, b).roundToDecimals(2), 441.67);
+      final a = 0x00000000.colorArgbToUniColorArgb<int>();
+      final b = 0xffffffff.colorArgbToUniColorArgb<int>();
+      expect(cd.distance(a, b).roundToDecimals(2), 510.0);
 
       {
-        final c = 0x010203.colorRgbToUniColorRgb<int>();
-        expect(cd.distance(a, c).roundToDecimals(2), 3.74);
+        final c = 0xff010203.colorArgbToUniColorArgb<int>();
+        expect(cd.distance(a, c).roundToDecimals(2), 255.03);
       }
 
       {
-        final c = 0xf1f2f3.colorRgbToUniColorRgb<int>();
+        final c = 0xfff1f2f3.colorArgbToUniColorArgb<int>();
         expect(cd.distance(b, c).roundToDecimals(2), 22.56);
       }
     });

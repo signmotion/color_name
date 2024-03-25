@@ -7,7 +7,8 @@ void main() {
     final c = UniColorName(palette);
     const forrestGreenName = 'forrest green';
     const forrestGreenValue = (
-      ColorModel.rgb,
+      ColorModel.argb,
+      1.0,
       0.0823529411764706,
       0.266666666666667,
       0.0235294117647059

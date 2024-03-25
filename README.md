@@ -27,10 +27,8 @@ print(c.value('forrest green'));
 print(c.name((0.08, 0.27, 0.02), decimals: 2));
 ```
 
-Output:
-
 ```text
-(rgb, 0.0823529411764706, 0.266666666666667, 0.0235294117647059)
+(argb, 1.0, 0.0823529411764706, 0.266666666666667, 0.0235294117647059)
 forrest green
 ```
 
@@ -91,16 +89,16 @@ For example:
 Examples of using:
 
 ```dart
-// as RGB model by default
-0xCC00DE.colorToString();
+// as ARGB model by default
+0xFFCC00DE.colorToString();
 
 // represent as XYZ model before transformation
 0xCC00DE.model(ColorModel.hsl).colorToString();
 // or with same result
 0xCC00DE.colorModelHsl.colorToString();
 
-// as RGB model by default
-'cc00de'.colorToInt();
+// as ARGB model by default
+'ffcc00de'.colorToInt();
 
 // 255 is a max value for the channel for normalize a color to range [0.0; 1.0]
 [1, 12, 128].colorToUniColorDouble(255);

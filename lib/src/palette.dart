@@ -35,14 +35,19 @@ class UniPalette<T extends Object> extends Palette<UniColor<T>> {
       throw ArgumentError('The file `$path` not found.');
     }
 
-    final list = l.map((c) => c.colorRgbToInt8Rgb);
+    final list = l.map((c) {
+      final hasAlpha = c.length == 4;
+      final pc = hasAlpha ? c : [0xff, ...c];
+      return pc.colorArgbToInt8Argb;
+    });
 
     return UniPalette.list(list as Iterable<T>, model);
   }
 
   /// Constructing from [Iterable].
+  /// Adding alpha when absent.
   factory UniPalette.list(Iterable<T> list, ColorModel model) {
-    if (model != ColorModel.rgb) {
+    if (model != ColorModel.argb) {
       throw UnimplementedError();
     }
 
@@ -54,7 +59,10 @@ class UniPalette<T extends Object> extends Palette<UniColor<T>> {
     final map = <String, UniColor<T>>{};
     for (final c in list) {
       final entry = switch (c) {
-        int v => MapEntry(v.colorRgbToStringRgb, v.colorRgbToUniColorRgb<T>()),
+        int v => MapEntry(
+            v.colorArgbToStringArgb,
+            v.colorArgbToUniColorArgb<T>(),
+          ),
         _ => throw ArgumentError('$c'),
       };
       map[entry.key] = entry.value;

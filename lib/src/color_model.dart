@@ -7,19 +7,16 @@ enum ColorModel {
 
   cmyk(),
 
-  /// R, G, B as double.
-  /// Range [0.0; 1.0] per channel.
-  rgb(),
+  /// A, R, G, B as number.
+  argb(),
 
-  /// H, S, L as double.
-  /// Range [0.0; 1.0] per channel.
+  /// H, S, L as number.
   hsl(),
 
-  /// H, S, V as double.
-  /// Range [0.0; 1.0] per channel.
+  /// H, S, V as number.
   hsv(),
 
-  /// X, Y, Z as double.
+  /// X, Y, Z as number.
   /// See https://en.wikipedia.org/wiki/CIE_1931_color_space
   xyz();
 
