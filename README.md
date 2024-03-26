@@ -22,7 +22,7 @@ Share some ❤️ and star repo to support the project.
 
 | Android | iOS | Linux | MacOS | Web | Windows |
 | :-----: | :-: | :---: | :---: | :-: | :-----: |
-|   ✅    | ✅  |  ✅   |  ✅   | ✅  |   ✅    |
+|   ✅    | ✅  |  ✅   |  ✅   |  ✘  |   ✅    |
 
 ## Usage
 
