@@ -92,7 +92,7 @@ For example:
 `colorRgbToIterableIntHsv`
 `colorXyzToIterableIntXyz`
 
-Examples of using:
+Examples of uses:
 
 ```dart
 // as ARGB model by default
@@ -108,26 +108,15 @@ Examples of using:
 
 // 255 is a max value for the channel for normalize a color to range [0.0; 1.0]
 [1, 12, 128].colorToUniColorDouble(255);
-// the result will be `(1 / 255, 12 / 255, 128 / 255)`
+// the result will be `(1.0, 1 / 255, 12 / 255, 128 / 255)`
 
 // but in this case
 [1, 12, 128].colorToUniColorDouble();
 // the result will be `(1.0, 12.0, 128.0)`
 
 [0.1, 0.12, 0.128].colorToUniColorInt(255);
-// the result for this example: `(0.1 * 255, 0.12 * 255, 0.128 * 255)`
+// the result for this example: `(255, 0.1 * 255, 0.12 * 255, 0.128 * 255)`
 ```
-
-## Welcome
-
-Requests and suggestions are warmly welcome.
-
-This package is open-source, stable and well-tested. Development happens on
-[GitHub](https://github.com/signmotion/uni_color_name). Feel free to report issues
-or create a pull-request there.
-
-General questions are best asked on
-[StackOverflow](https://stackoverflow.com/questions/tagged/uni_color_name).
 
 ## Resources
 
@@ -139,7 +128,36 @@ Working on this project, I found amazing resources and am grateful to the author
   Get Ready to Explore a World of Color.
 - <https://en.m.wikipedia.org/wiki/List_of_color_palettes>
 
-## TODO
+## Welcome to Inspiration
+
+Requests and suggestions are warmly welcome.
+
+Contributions are what make the open-source community such a great place to learn, create, and be inspired.
+
+If this is your first contribution, I'll leave you with some of the best links I've found: they will help you get started or/and become even more efficient.
+
+- [Guide to Making a First Contribution](https://github.com/firstcontributions/first-contributions). You will find the guide in your native language.
+- [How to Contribute to Open Source](https://opensource.guide/how-to-contribute). Longread for deep diving for first-timers and for veterans.
+- [Summer Guide from Google](https://youtu.be/qGTQ7dEZXZc).
+
+The package **UniColorName** is open-source, stable and well-tested. Development happens on
+[GitHub](https://github.com/signmotion/uni_color_name). Feel free to report issues
+or create a pull-request there.
+
+General questions are best asked on
+[StackOverflow](https://stackoverflow.com/questions/tagged/uni_color_name).
+
+And here is a curated list of how you can help:
+
+- Report parts of the documentation that are unclear.
+- Fix typos/grammar mistakes.
+- Update the documentation or add examples.
+- Report bugs and scenarios that are difficult to implement.
+- Implement new features by making a pull-request (look below).
+
+## TODO (perhaps)
+
+Once you start using the **UniColorName**, it will become easy to choose the functionality to contribute. But if you already get everything you need from this package but have some free time, let me write here what I have planned:
 
 - Feautures for this package into `README`.
 - Converters between models. See [1](https://pub.dev/packages/color_models), [2](https://dev.to/bytebodger/determining-the-rgb-distance-between-two-colors-4n91), [3](https://github.com/MichaelFenwick/Color).
@@ -175,5 +193,7 @@ Working on this project, I found amazing resources and am grateful to the author
   CR: <https://en.m.wikipedia.org/wiki/Color_rendering_index>
 
 - Articles from <https://en.m.wikipedia.org/wiki/Index_of_color-related_articles>.
+
+It's just a habit of mine: writing down ideas that come to mind while working on a project. I confess that I rarely return to these notes. But now, hopefully, even if you don't have an idea yet, the above notes will help you choose the suitable "feature" and become a contributor to the open-source community.
 
 Created [with ❤️](https://syrokomskyi.com)
