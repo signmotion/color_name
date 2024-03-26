@@ -16,7 +16,13 @@ Identifies the value of a color by name and vice versa. Knows over 900 color nam
 The easy-to-use and well-tested library.
 Feel free to use it in your awesome projects.
 
-Share some ❤️ and star repo to support the project.
+Share some ❤️ and ⭐ repo to support the project.
+
+## Platforms
+
+| Android | iOS | Linux | MacOS | Web | Windows |
+| :-----: | :-: | :---: | :---: | :-: | :-----: |
+|   ✅    | ✅  |  ✅   |  ✅   | ✅  |   ✅    |
 
 ## Usage
 
