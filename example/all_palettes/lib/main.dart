@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:uni_color_name/uni_color_name.dart';
 
+/// See also `example/main.dart` file with pure Dart example.
 void main() => runApp(const App());
 
 class App extends StatelessWidget {

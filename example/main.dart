@@ -2,6 +2,8 @@
 
 import 'package:uni_color_name/uni_color_name.dart';
 
+/// See also `example/all_palettes` forlder with Flutter example
+/// that visualize a palette.
 void main() {
   final palette = UniPalette(PalettesMaps.zeplin);
   final c = UniColorName(palette);
