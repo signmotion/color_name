@@ -1,37 +1,45 @@
 import 'package:flutter/material.dart';
 import 'package:uni_color_name/uni_color_name.dart';
 
-/// See also `example/main.dart` file with pure Dart example.
+/// See also `example/main.dart` file with pure Dart SDK example.
 void main() => runApp(const App());
 
 class App extends StatelessWidget {
   const App({super.key});
 
+  /// You can choose any palette from [PalettesMaps].
+  UniPalette<double> get palette => UniPalette(PalettesMaps.commodore64);
+
   @override
   Widget build(BuildContext context) => MaterialApp(
         home: Scaffold(
-          appBar: AppBar(title: const Text('UniColorName Palettes')),
+          appBar: AppBar(
+            title: const Center(
+              child: Text('UniColorName Palettes'),
+            ),
+          ),
           body: SingleChildScrollView(
             child: Wrap(
               alignment: WrapAlignment.center,
-              children: [
-                Text(
-                  'The palette Zeplin contains ${palette.count} colors',
-                  textScaler: const TextScaler.linear(1.5),
-                ),
-                for (final name in palette.map.keys.toList()..sort())
-                  Glass(
-                    name: name,
-                    value: palette[name]?.colorArgbToInt8Argb ?? 0,
-                  ),
-              ],
+              children: [note, ...glasses],
             ),
           ),
         ),
         debugShowCheckedModeBanner: false,
       );
 
-  UniPalette<double> get palette => UniPalette(PalettesMaps.zeplin);
+  Widget get note => Text(
+        'The palette contains ${palette.count} colors',
+        textScaler: const TextScaler.linear(1.5),
+      );
+
+  List<Widget> get glasses => [
+        for (final name in palette.map.keys.toList()..sort())
+          Glass(
+            name: name,
+            value: palette[name]?.colorArgbToInt8Argb ?? 0,
+          ),
+      ];
 }
 
 class Glass extends StatelessWidget {

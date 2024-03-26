@@ -1,7 +1,11 @@
 part of '../uni_color_name.dart';
 
 class PalettesMaps {
-  static const all = <String, UniColor<double>>{...zeplinMapArgb};
+  // static final all = <String, UniColor<double>>{
+  //   ...commodore64,
+  //   ...zeplin,
+  // };
 
+  static const commodore64 = commodore64MapArgb;
   static const zeplin = zeplinMapArgb;
 }
