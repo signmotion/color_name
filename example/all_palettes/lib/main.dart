@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:uni_color_name/uni_color_name.dart';
 
 /// See also `example/main.dart` file with pure Dart SDK example.
-void main() => runApp(const App());
+/// You can choose any palette from [PalettesMaps].
+void main() => runApp(App(
+      palette: UniPalette(PalettesMaps.commodore64),
+    ));
 
 class App extends StatelessWidget {
-  const App({super.key});
+  const App({super.key, required this.palette});
 
-  /// You can choose any palette from [PalettesMaps].
-  UniPalette<double> get palette => UniPalette(PalettesMaps.commodore64);
+  final UniPalette<double> palette;
 
   @override
   Widget build(BuildContext context) => MaterialApp(
