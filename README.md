@@ -16,19 +16,15 @@ Identifies the value of a color by name and vice versa. Knows over 900 color nam
 The easy-to-use and [well-tested](https://github.com/signmotion/uni_color_name/tree/master/test) library.
 Feel free to use it in your awesome projects.
 
+| Android | iOS | Linux | MacOS | Web | Windows |              |
+| :-----: | :-: | :---: | :---: | :-: | :-----: | :----------- |
+|   ✅    | ✅  |  ✅   |  ✅   |  ✘  |   ✅    | **platform** |
+
+| Dart | Flutter |         |
+| :--: | :-----: | :------ |
+|  ✅  |   ✅    | **SDK** |
+
 Share some ❤️ and star repo to support the project.
-
-## Platforms
-
-| Android | iOS | Linux | MacOS | Web | Windows |
-| :-----: | :-: | :---: | :---: | :-: | :-----: |
-|   ✅    | ✅  |  ✅   |  ✅   |  ✘  |   ✅    |
-
-## SDKs
-
-| Dart | Flutter |
-| :--: | :-----: |
-|  ✅  |   ✅    |
 
 ## Usage
 
