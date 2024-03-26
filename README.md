@@ -114,7 +114,7 @@ Examples of uses:
 
 // but in this case
 [1, 12, 128].colorToUniColorDouble();
-// the result will be `(1.0, 12.0, 128.0)`
+// the result will be `(255.0, 1.0, 12.0, 128.0)`
 
 [0.1, 0.12, 0.128].colorToUniColorInt(255);
 // the result for this example: `(255, 0.1 * 255, 0.12 * 255, 0.128 * 255)`
@@ -162,7 +162,7 @@ And here is a curated list of how you can help:
 Once you start using the **UniColorName**, it will become easy to choose the functionality to contribute. But if you already get everything you need from this package but have some free time, let me write here what I have planned:
 
 - Feautures for this package into `README`.
-- Check out the Web.
+- Check out the Web platform.
 - Converters between models. See [1](https://pub.dev/packages/color_models), [2](https://dev.to/bytebodger/determining-the-rgb-distance-between-two-colors-4n91), [3](https://github.com/MichaelFenwick/Color).
 - Generalized to `num` instead of `double` and `int`? Reason: reduce a count of extensions.
 - Converters between palettes.
