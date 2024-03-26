@@ -13,7 +13,7 @@
 [![Pub Score](https://img.shields.io/pub/points/uni_color_name?logo=dart&logoColor=00b9fc)](https://pub.dev/packages/uni_color_name/score)
 
 Identifies the value of a color by name and vice versa. Knows over 900 color names.
-The easy-to-use and well-tested library.
+The easy-to-use and [well-tested](https://github.com/signmotion/uni_color_name/tree/master/test) library.
 Feel free to use it in your awesome projects.
 
 Share some ❤️ and ⭐ repo to support the project.
@@ -38,7 +38,7 @@ print(c.name((0.08, 0.27, 0.02), decimals: 2));
 forrest green
 ```
 
-See also `example/all_palettes` forlder with Flutter example that visualize a palette.
+See also `example/all_palettes` forlder with Flutter example that visualize palette `Zeplin`.
 
 [<img src="https://raw.githubusercontent.com/signmotion/uni_color_name/master/images/screenshots/zeplin_palette.webp" width="600"/>](https://raw.githubusercontent.com/signmotion/uni_color_name/master/images/screenshots/zeplin_palette.webp)
 
