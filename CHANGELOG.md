@@ -3,6 +3,18 @@
 All notable changes to the project `UniColorName` will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.5.0
+
+- Expanded `UniColor` with alpha channel. Updated palettes.
+- Renamed `ColorModel.rgb` to `ColorModel.argb`.
+- Introduced `UniColorNoAlpha` and `UniColorShortNoAlpha` classes.
+- Renamed `withoutModel` to `noModel`.
+- Renamed `i256` to `index256` and optimized it.
+- Added `withAlpha` and `noAlpha` extensions.
+- Renamed a test palettes.
+- Expanded Welcome and TODO sections in `README`.
+- Provided a platform support in `README`.
+
 ## 0.4.1
 
 - Fixed CI.
