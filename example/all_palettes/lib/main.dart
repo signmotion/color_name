@@ -21,7 +21,7 @@ class App extends StatelessWidget {
                 for (final name in palette.map.keys.toList()..sort())
                   Glass(
                     name: name,
-                    value: palette[name]?.colorRgbToInt8Rgb ?? 0,
+                    value: palette[name]?.colorArgbToInt8Argb ?? 0,
                   ),
               ],
             ),
@@ -43,7 +43,7 @@ class Glass extends StatelessWidget {
   final String name;
   final int value;
 
-  String get code => '#${value.toRadixString(16).padLeft(6, '0')}';
+  String get code => '#${value.colorArgbToStringRgb}';
 
   @override
   Widget build(BuildContext context) {

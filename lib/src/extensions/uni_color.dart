@@ -276,4 +276,9 @@ extension ColorNameIntExt on int {
       );
 
   String get colorArgbToStringArgb => toRadixString(16).padLeft(8, '0');
+
+  String get colorArgbToStringRgb =>
+      colorArgbToRgb.toRadixString(16).padLeft(6, '0');
+
+  int get colorArgbToRgb => this & 0xffffff;
 }
