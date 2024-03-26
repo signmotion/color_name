@@ -55,7 +55,21 @@ class Glass extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(6),
       child: Container(
-        color: color,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          boxShadow: [
+            BoxShadow(
+              color: color,
+              offset: const Offset(0, 2),
+              blurRadius: 1,
+            )
+          ],
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [Colors.white, color],
+          ),
+        ),
         height: height,
         alignment: Alignment.centerLeft,
         child: Text(
