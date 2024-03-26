@@ -6,13 +6,14 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ## 0.5.0
 
 - Expanded `UniColor` with alpha channel. Updated palettes.
+- Included a Flutter example with palette Zeplin.
 - Renamed `ColorModel.rgb` to `ColorModel.argb`.
 - Introduced `UniColorNoAlpha` and `UniColorShortNoAlpha` classes.
 - Renamed `withoutModel` to `noModel`.
 - Renamed `i256` to `index256` and optimized it.
 - Added `withAlpha` and `noAlpha` extensions.
 - Renamed a test palettes.
-- Expanded Welcome and TODO sections in `README`.
+- Improved Welcome and TODO sections in `README`.
 - Provided a platform support in `README`.
 
 ## 0.4.1
