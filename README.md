@@ -82,26 +82,6 @@ The formulas for color conversion are easily programmable, but we have many conv
 | false                   |
 | true                    |
 
-| ⬇️ num |
-| ------ |
-| double |
-| int    |
-
-| ⬇️ channel presentation |
-| ----------------------- |
-| decimal                 |
-| hex                     |
-| percentage              |
-
-| ⬇️ structure       |
-| ------------------ |
-| int                |
-| String             |
-| UniColor\<double\> |
-| UniColor\<int\>    |
-| Iterable\<double\> |
-| Iterable\<int\>    |
-
 | ⬇️ depth per channel |
 | -------------------- |
 | 1                    |
@@ -111,6 +91,26 @@ The formulas for color conversion are easily programmable, but we have many conv
 | 5                    |
 | 6                    |
 | ...                  |
+
+| ⬇️ channel presentation |
+| ----------------------- |
+| decimal                 |
+| hex                     |
+| percentage              |
+
+| ⬇️ num |
+| ------ |
+| double |
+| int    |
+
+| ⬇️ structure       |
+| ------------------ |
+| int                |
+| String             |
+| UniColor\<double\> |
+| UniColor\<int\>    |
+| Iterable\<double\> |
+| Iterable\<int\>    |
 
 TODO A converter name using as extension and constructing by these schema: `color[SourceModel]To[Structure][ResultModel]()`.
 
