@@ -12,6 +12,9 @@ part 'src/extensions/string.dart';
 part 'src/extensions/DEPRECATED_uni_color.dart';
 
 part 'src/palettes/commodore_64.dart';
+part 'src/palettes/pantone_graphic_design.dart';
+part 'src/palettes/pantone_fashion_design.dart';
+part 'src/palettes/pantone_product_design.dart';
 part 'src/palettes/ral.dart';
 part 'src/palettes/zeplin.dart';
 
