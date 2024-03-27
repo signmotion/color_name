@@ -44,7 +44,7 @@ See also `example/all_palettes` forlder with Flutter example that visualize pale
 
 [<img src="https://raw.githubusercontent.com/signmotion/uni_color_name/master/images/screenshots/zeplin_palette.webp" width="600"/>](https://raw.githubusercontent.com/signmotion/uni_color_name/master/images/screenshots/zeplin_palette.webp)
 
-## Colors
+## Available Colors
 
 <details>
   <summary>A list of colors that can be identified right now:</summary>
@@ -59,18 +59,58 @@ You can add your own color palette: the class `ColorName` can handle any inherit
 
 The [helper table](https://docs.google.com/spreadsheets/d/1f8wvrgqfGcXFAiAXx-p9CgLXo3__IoEn8-Us-uRyfok/copy).
 
+## Glossary
+
+### [https://en.wikipedia.org/wiki/Color_depth](Color depth or Bit depth)
+
+The number of bits per pixel in a bitmap image. [List of common depths](https://en.wikipedia.org/wiki/Color_depth#List_of_common_depths).
+
 ## Color Converters
 
-The formulas for color conversion are easily programmable, but we have many converters. So let's summarize them into the table (TODO):
+The formulas for color conversion are easily programmable, but we have many converters. So let's summarize them (TODO):
 
-| ⬇️ structures      | cmyk | rgb | hsl | hsv | xyz | ⬅️ models |
-| ------------------ | ---- | --- | --- | --- | --- | --------- |
-| int                |      |     |     |     |     |           |
-| String             |      |     |     |     |     |           |
-| UniColor\<double\> |      |     |     |     |     |           |
-| UniColor\<int\>    |      |     |     |     |     |           |
-| Iterable\<double\> |      |     |     |     |     |           |
-| Iterable\<int\>    |      |     |     |     |     |           |
+| ⬇️ model (channels) |
+| ------------------- |
+| cmyk                |
+| rgb                 |
+| hsl                 |
+| hsv                 |
+| xyz                 |
+
+| ⬇️ alpha (transparency) |
+| ----------------------- |
+| false                   |
+| true                    |
+
+| ⬇️ num |
+| ------ |
+| double |
+| int    |
+
+| ⬇️ channel presentation |
+| ----------------------- |
+| decimal                 |
+| hex                     |
+| percentage              |
+
+| ⬇️ structure       |
+| ------------------ |
+| int                |
+| String             |
+| UniColor\<double\> |
+| UniColor\<int\>    |
+| Iterable\<double\> |
+| Iterable\<int\>    |
+
+| ⬇️ depth per channel |
+| -------------------- |
+| 1                    |
+| 2                    |
+| 3                    |
+| 4                    |
+| 5                    |
+| 6                    |
+| ...                  |
 
 TODO A converter name using as extension and constructing by these schema: `color[SourceModel]To[Structure][ResultModel]()`.
 
@@ -128,7 +168,18 @@ Working on this project, I found amazing resources and am grateful to the author
   Pass in any valid color and get conversion into any other format, the name of the color, placeholder images and a multitude of schemes.
 - <https://colorhexmap.com>
   Get Ready to Explore a World of Color.
+- <https://canva.com/learn/color-tips>
+  10 color inspiration secrets only designers know about.
+- <https://canva.com/colors/color-wheel>
+  Color theory and the color wheel.
+- <https://canva.com/learn/100-color-combinations>
+  100 inspiring color combinations & Free color palette generator.
+
+### Palettes
+
 - <https://en.m.wikipedia.org/wiki/List_of_color_palettes>
+
+- [Canva color palettes](https://canva.com/colors/color-palettes)
 
 ## Welcome to Inspiration
 
@@ -167,13 +218,14 @@ Once you start using the **UniColorName**, it will become easy to choose the fun
 - Generalized to `num` instead of `double` and `int`? Reason: reduce a count of extensions.
 - Converters between palettes.
 - How to define your own map for color palette.
+
 - Optimize a search.
 - Fuzzy search by name.
 - Fuzzy search by value.
+
 - Range checker to each model.
 - Autodetect a model when constructing a `Palette`.
 - `operator[]` for getting a value by color name and vice versa.
-- More palettes. See [1](https://en.wikipedia.org/wiki/List_of_colors:_A%E2%80%93F), [2](https://en.m.wikipedia.org/wiki/List_of_color_palettes), [3](https://en.wikipedia.org/wiki/Lists_of_colors).
 
 - The range of values to check the integrity of the color.
 
@@ -183,12 +235,36 @@ Once you start using the **UniColorName**, it will become easy to choose the fun
 
 - Sources for color palettes.
 
-- Pantone. <https://en.m.wikipedia.org/wiki/Pantone>
+- More palettes. See [1](https://en.wikipedia.org/wiki/List_of_colors:_A%E2%80%93F), [2](https://en.m.wikipedia.org/wiki/List_of_color_palettes), [3](https://en.wikipedia.org/wiki/Lists_of_colors).
+- Faber Castell palettes. [1](https://curtisward.com/faber-castell-polychromos-pencils-colour-chart)
+- Colors from WIKI as palette? [1](<https://en.wikipedia.org/wiki/List_of_colors_(alphabetical)>)
+
+- Construct a palette by color scheme? Complementary, triad, tetrad, analogus, accented, split... [1](https://en.wikipedia.org/wiki/Color_scheme) [2](https://rgb.to/ral/6038)
+
+- In fashion balance palettes? [1](https://infashionbalance.com)
+- colorhunt.co palettes? [1](https://colorhunt.co)
+
+- PANTONE®, RAL®, Dulux®, Copic®, NCS®, HKS® and Prismacolor®. [!](https://github.com/fundevogel/we-love-colors)
+
+- [nice-color-palettes](https://github.com/Experience-Monks/nice-color-palettes) <- [colourlovers.com](https://colourlovers.com)
+- [r-color-palettes](https://github.com/EmilHvitfeldt/r-color-palettes)
+- [paletteer](https://github.com/EmilHvitfeldt/paletteer)
+- [palettable](https://github.com/jiffyclub/palettable)
+
 - Freetone. <https://en.m.wikipedia.org/wiki/Stuart_Semple#Freetone>
 
-- RAL color system. <https://en.m.wikipedia.org/wiki/List_of_RAL_colours>
+- Color spaces (aka palettes) from <https://github.com/fundevogel/we-love-colors>.
+
+- RAL color system. <https://en.m.wikipedia.org/wiki/List_of_RAL_colours> | <https://ral-farben.de/alle-ral-farben> [1](https://github.com/fundevogel/we-love-colors) [2](https://pub.dev/packages/ral_color) [1](https://rgb.to/ral) [2](https://rgb.to/ral/6038) [all colors](https://web.archive.org/web/20201130075701/http://ral-farben.de/content/application-help/all-ral-colours-names/overview-ral-design-colours.html) or <https://ral-farben.de/en/downloads>
+- RAL light reflactance values? [1](https://ral-farben.de/en/downloads)
+- RAL Classic & Design system plus color names. [1](https://ral-farben.de/en/downloads)
+- RAL Classic, Design, Effect, Plastic P1, Plastic P2.
+- Meaning from [ISO 3864](https://en.m.wikipedia.org/wiki/ISO_3864)?
+
 - HKS color system. <https://en.m.wikipedia.org/wiki/HKS_(colour_system)>
 - Natural color system. <https://en.m.wikipedia.org/wiki/Natural_Color_System>
+
+- CIE-LAB, CIE-LCH, CIE-LUV, XYY, HUNTER-LAB. [1](https://canva.com/colors/color-meanings/orange)
 
 - Color blind friendly palettes. <https://commons.wikimedia.org/wiki/Commons:Creating_accessible_illustrations>
 
@@ -196,6 +272,12 @@ Once you start using the **UniColorName**, it will become easy to choose the fun
   CR: <https://en.m.wikipedia.org/wiki/Color_rendering_index>
 
 - Articles from <https://en.m.wikipedia.org/wiki/Index_of_color-related_articles>.
+
+- Can we keep the palette organic combinations? [1](https://canva.com/learn/100-color-combinations/#100-color-palettes) [2](https://infashionbalance.com/fashion-palette-12-street-style)
+
+- Tagged color palettes. [1](https://colorhunt.co/palette/d61355f94a29fce22a30e3df)
+
+- Names in different lanuages? [1](https://rgb.to/ral/6038)
 
 It's just a habit of mine: writing down ideas that come to mind while working on a project. I confess that I rarely return to these notes. But now, hopefully, even if you don't have an idea yet, the above notes will help you choose the suitable "feature" and become a contributor to the open-source community.
 
