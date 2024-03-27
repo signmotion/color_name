@@ -17,10 +17,6 @@ abstract class Palette<T extends C> {
   /// Color [T] by name.
   T? operator [](String colorName) =>
       list.firstWhereOrNull((c) => c.hasName && c.name == colorName);
-
-  /// A closest color from this palette.
-  /// See [ColorDistance].
-  T closest(T color, ColorDistance cd);
 }
 
 /// The universal palette for represent any color as a [T]-typed value.
@@ -77,61 +73,5 @@ class UniPalette<T extends C> extends Palette<T> {
     final list = [for (final v in iterable) v.argbInt8Color] as List<T>;
 
     return UniPalette(list);
-  }
-
-  // @override
-  // TODO(sign): (String, UniColor<T>) closest(UniColor<T> color, ColorDistance cd) {
-  //   _points ??= [
-  //     for (final entry in map.entries)
-  //       {
-  //         'x': entry.value.red,
-  //         'y': entry.value.green,
-  //         'z': entry.value.blue,
-  //         'name': entry.key,
-  //       }
-  //   ];
-
-  //   double distance(Map<dynamic, dynamic> a, Map<dynamic, dynamic> b) {
-  //     final aa = (model, a['x'] as T, a['y'] as T, a['z'] as T);
-  //     final bb = (model, b['x'] as T, b['y'] as T, b['z'] as T);
-
-  //     return cd.distance(aa, bb);
-  //   }
-
-  //   _kdtree ??= KDTree(_points!, distance, ['x', 'y', 'z']);
-
-  //   final nearest = _kdtree!.nearest(
-  //     {
-  //       'x': color.red,
-  //       'y': color.green,
-  //       'z': color.blue,
-  //     },
-  //     1,
-  //   );
-
-  //   final r = (nearest.single as List<dynamic>).first as Map<String, dynamic>;
-  //   final c = (model, r['x'] as T, r['y'] as T, r['z'] as T);
-
-  //   return (r['name'] as String, c);
-  // }
-
-  // KDTree? _kdtree;
-  // List<Map<String, dynamic>>? _points;
-
-  @override
-  T closest(T color, ColorDistance cd) {
-    // respect JavaScript limitation
-    final maxIntValue = pow(2, 53).round() - 1;
-    var min = maxIntValue.toDouble();
-    late T found;
-    for (final other in list) {
-      final d = cd.distance(color, other);
-      if (d < min) {
-        min = d;
-        found = other;
-      }
-    }
-
-    return found;
   }
 }

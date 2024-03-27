@@ -15,6 +15,10 @@ abstract class ColorName<T extends C, P extends Palette<T>> {
   /// A name of color by [color] with model (full color represenation).
   /// Match with respects to [decimals].
   String? name(T color, {int decimals = -1});
+
+  /// A closest color from the [palette].
+  /// See [ColorDistance].
+  T closest(T color, ColorDistance cd);
 }
 
 /// A class for work with [UniPalette] and [UniColor] defined into [palette].
@@ -41,5 +45,61 @@ class UniColorName<T extends C> extends ColorName<T, UniPalette<T>> {
     }
 
     return null;
+  }
+
+  // @override
+  // TODO(sign): (String, UniColor<T>) closest(UniColor<T> color, ColorDistance cd) {
+  //   _points ??= [
+  //     for (final entry in map.entries)
+  //       {
+  //         'x': entry.value.red,
+  //         'y': entry.value.green,
+  //         'z': entry.value.blue,
+  //         'name': entry.key,
+  //       }
+  //   ];
+
+  //   double distance(Map<dynamic, dynamic> a, Map<dynamic, dynamic> b) {
+  //     final aa = (model, a['x'] as T, a['y'] as T, a['z'] as T);
+  //     final bb = (model, b['x'] as T, b['y'] as T, b['z'] as T);
+
+  //     return cd.distance(aa, bb);
+  //   }
+
+  //   _kdtree ??= KDTree(_points!, distance, ['x', 'y', 'z']);
+
+  //   final nearest = _kdtree!.nearest(
+  //     {
+  //       'x': color.red,
+  //       'y': color.green,
+  //       'z': color.blue,
+  //     },
+  //     1,
+  //   );
+
+  //   final r = (nearest.single as List<dynamic>).first as Map<String, dynamic>;
+  //   final c = (model, r['x'] as T, r['y'] as T, r['z'] as T);
+
+  //   return (r['name'] as String, c);
+  // }
+
+  // KDTree? _kdtree;
+  // List<Map<String, dynamic>>? _points;
+
+  @override
+  T closest(T color, ColorDistance cd) {
+    // respect JavaScript limitation
+    final maxIntValue = pow(2, 53).round() - 1;
+    var min = maxIntValue.toDouble();
+    late T found;
+    for (final other in palette.list) {
+      final d = cd.distance(color, other);
+      if (d < min) {
+        min = d;
+        found = other;
+      }
+    }
+
+    return found;
   }
 }

@@ -55,10 +55,12 @@ void main() {
         'test/data/palettes/black_white.json',
         ColorModel.rgb,
       );
+      final u = UniColorName(palette);
+
       const cd = RgbColorSqrtDistance();
 
       String closest(int color) =>
-          palette.closest(color.rgbInt8Color, cd).rgbInt8Color.int24Hex;
+          u.closest(color.rgbInt8Color, cd).rgbInt8Color.int24Hex;
 
       expect(closest(0xff000000), '000000');
       expect(closest(0x00000 + 1), '000000');
@@ -75,10 +77,12 @@ void main() {
         'test/data/palettes/grey_0_255.json',
         ColorModel.rgb,
       );
+      final u = UniColorName(palette);
+
       const cd = RgbColorSqrtDistance();
 
       String closest(int color) =>
-          palette.closest(color.rgbInt8Color, cd).rgbInt8Color.int24Hex;
+          u.closest(color.rgbInt8Color, cd).rgbInt8Color.int24Hex;
 
       expect(closest(0x000000), '000000');
       expect(closest(0x000000 + 1), '000000');
