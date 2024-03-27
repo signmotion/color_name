@@ -4,19 +4,19 @@ import 'package:uni_color_name/uni_color_name.dart';
 void main() {
   group('ColorDistance', () {
     test('RgbColorSqrtDistance', () {
-      const cd = RgbColorSqrtDistance<int>();
+      const cd = RgbColorSqrtDistance();
 
-      final a = 0x00000000.colorArgbToUniColorArgb<int>();
-      final b = 0xffffffff.colorArgbToUniColorArgb<int>();
-      expect(cd.distance(a, b).roundToDecimals(2), 510.0);
+      final a = 0x000000.rgbInt8Color;
+      final b = 0xffffff.rgbInt8Color;
+      expect(cd.distance(a, b).roundToDecimals(2), 441.67);
 
       {
-        final c = 0xff010203.colorArgbToUniColorArgb<int>();
-        expect(cd.distance(a, c).roundToDecimals(2), 255.03);
+        final c = 0x010203.rgbInt8Color;
+        expect(cd.distance(a, c).roundToDecimals(2), 3.74);
       }
 
       {
-        final c = 0xfff1f2f3.colorArgbToUniColorArgb<int>();
+        final c = 0xf1f2f3.rgbInt8Color;
         expect(cd.distance(b, c).roundToDecimals(2), 22.56);
       }
     });

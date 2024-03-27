@@ -1,7 +1,7 @@
 part of '../uni_color_name.dart';
 
-/// [C] Full color representation.
-abstract class ColorName<C extends Object, P extends Palette<C>> {
+/// [T] Full color presentation.
+abstract class ColorName<T extends C, P extends Palette<T>> {
   const ColorName(this.palette);
 
   final P palette;
@@ -9,45 +9,34 @@ abstract class ColorName<C extends Object, P extends Palette<C>> {
   ColorModel get model => palette.model;
 
   /// A value of color by [name].
-  /// Use a [ColorNameOnStringExt.normalizedNameColor] for search.
-  C? value(String name) =>
-      palette.map[name] ?? palette.map[name.normalizedNameColor];
+  /// Use a [ColorNameStringExt.normalizedNameColor] for search.
+  T? value(String name) => palette[name] ?? palette[name.normalizedNameColor];
 
-  /// A name of color by [value] with model (full color represenation).
+  /// A name of color by [color] with model (full color represenation).
   /// Match with respects to [decimals].
-  String? name<A>(A value, {int decimals = -1});
+  String? name(T color, {int decimals = -1});
 }
 
 /// A class for work with [UniPalette] and [UniColor] defined into [palette].
 /// If [palette] is not defined use [UniPalette] with all known palettes.
-class UniColorName<T extends Object>
-    extends ColorName<UniColor<T>, UniPalette<T>> {
+class UniColorName<T extends C> extends ColorName<T, UniPalette<T>> {
   const UniColorName(super.palette);
 
   @override
-  String? name<A>(A value, {int decimals = -1}) => switch (value) {
-        UniColor<T> c => _name(c, decimals: decimals),
-        UniColorShort<T> cs => _name(cs.withModel(model), decimals: decimals),
-        UniColorNoAlpha<double> c => name(c.withAlpha(), decimals: decimals),
-        UniColorNoAlpha<int> c => name(c.withAlpha(), decimals: decimals),
-        UniColorShortNoAlpha<double> c =>
-          name(c.withAlpha(), decimals: decimals),
-        UniColorShortNoAlpha<int> c => name(c.withAlpha(), decimals: decimals),
-        _ =>
-          throw ArgumentError('A `value` should be `UniColor`, `UniColorShort`'
-              ' or their "no alpha" variant.'
-              ' We have: `${value.runtimeType}`.'),
-      };
+  String? name(T color, {int decimals = -1}) =>
+      _name(color, decimals: decimals);
 
-  String? _name(UniColor<T> value, {int decimals = -1}) {
-    // TODO(sign): Convert between models.
-    assert(model == value.model, 'Different models. TODO');
+  String? _name(T color, {int decimals = -1}) {
+    for (final c in palette.list) {
+      if (!color.sameModel(c)) {
+        // TODO(sign): Convert between models.
+        throw UnimplementedError('Different models.'
+            ' ${color.model} != ${c.model}');
+      }
 
-    for (final e in palette.map.entries) {
       // match with precission
-      if (e.value.colorToRoundDecimals(decimals) ==
-          value.colorToRoundDecimals(decimals)) {
-        return e.key;
+      if (color.equalChannels(c, decimals: decimals)) {
+        return c.name;
       }
     }
 

@@ -3,23 +3,17 @@ import 'package:test/test.dart';
 
 void main() {
   group('UniColorName', () {
-    final palette = UniPalette(PalettesMaps.zeplin);
-    final c = UniColorName(palette);
-    const forrestGreenName = 'forrest green';
-    const forrestGreenValue = (
-      ColorModel.argb,
-      1.0,
-      0.0823529411764706,
-      0.266666666666667,
-      0.0235294117647059
-    );
+    final palette = UniPalette(zeplinColors);
+    final u = UniColorName(palette);
+    const colorName = 'forrest green';
+    final colorValue = RgbInt8Color.rgb(0x15, 0x44, 0x06);
 
     test('detecting a value by name, exact match', () {
-      expect(c.value(forrestGreenName), forrestGreenValue);
+      expect(u.value(colorName)?.int24Hex, colorValue.int24Hex);
     });
 
     test('detecting a name by value, exact match', () {
-      expect(c.name(forrestGreenValue), forrestGreenName);
+      expect(u.name(colorValue), colorName);
     });
   });
 }

@@ -92,7 +92,7 @@ extension ColorNameCheckUniColorExt<T> on UniColor<T> {
   }
 
   void assertArgbModel() {
-    if (model == ColorModel.argb) {
+    if (model == ColorModel.rgb) {
     } else {
       throw ArgumentError('The color models should be ARGB. `$model`');
     }
@@ -234,7 +234,7 @@ extension ColorNameListExt<T> on List<T> {
       );
 
   UniColor<T> get colorArgbToUniColorArgb => (
-        ColorModel.argb,
+        ColorModel.rgb,
         this[0],
         this[1],
         this[2],
@@ -266,7 +266,7 @@ extension ColorNameIntExt on int {
   int get colorChannel4 => (0x000000ff & this) >> 0;
 
   UniColor<T> colorArgbToUniColorArgb<T>() =>
-      colorArgbToUniColorShort<T>().withModel(ColorModel.argb);
+      colorArgbToUniColorShort<T>().withModel(ColorModel.rgb);
 
   UniColorShort<T> colorArgbToUniColorShort<T>() => (
         colorChannel1 as T,

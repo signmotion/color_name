@@ -25,4 +25,7 @@ extension ColorNameDoubleExt on double {
 
     return (this * p).roundToDouble() / p;
   }
+
+  bool equalWithDecimals(double b, {int decimals = -1}) =>
+      roundToDecimals(decimals) == b.roundToDecimals(decimals);
 }

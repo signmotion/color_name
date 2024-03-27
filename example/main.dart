@@ -5,8 +5,8 @@ import 'package:uni_color_name/uni_color_name.dart';
 /// See also `example/all_palettes` forlder with Flutter SDK example
 /// that visualize a palette.
 void main() {
-  final palette = UniPalette(PalettesMaps.zeplin);
-  final c = UniColorName(palette);
-  print(c.value('forrest green'));
-  print(c.name((0.08, 0.27, 0.02), decimals: 2));
+  final palette = UniPalette(zeplinColors);
+  final u = UniColorName(palette);
+  print(u.value('forrest green'));
+  print(u.name(RgbInt8Color.rgb(0x15, 0x44, 0x06)));
 }

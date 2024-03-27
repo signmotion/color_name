@@ -77,10 +77,10 @@ The formulas for color conversion are easily programmable, but we have many conv
 | hsv                 |
 | xyz                 |
 
-| ⬇️ alpha (transparency) |
-| ----------------------- |
-| false                   |
-| true                    |
+| ⬇️ num |
+| ------ |
+| double |
+| int    |
 
 | ⬇️ depth per channel |
 | -------------------- |
@@ -94,23 +94,24 @@ The formulas for color conversion are easily programmable, but we have many conv
 
 | ⬇️ channel presentation |
 | ----------------------- |
-| decimal                 |
+| dec                     |
 | hex                     |
-| percentage              |
+| percent                 |
 
-| ⬇️ num |
-| ------ |
-| double |
-| int    |
+| ⬇️ alpha (transparency) |
+| ----------------------- |
+| false                   |
+| true                    |
 
 | ⬇️ structure       |
 | ------------------ |
 | int                |
 | String             |
-| UniColor\<double\> |
-| UniColor\<int\>    |
 | Iterable\<double\> |
 | Iterable\<int\>    |
+|                    |
+| UniColor\<double\> |
+| UniColor\<int\>    |
 
 TODO A converter name using as extension and constructing by these schema: `color[SourceModel]To[Structure][ResultModel]()`.
 
@@ -245,6 +246,8 @@ Once you start using the **UniColorName**, it will become easy to choose the fun
 - colorhunt.co palettes? [1](https://colorhunt.co)
 
 - PANTONE®, RAL®, Dulux®, Copic®, NCS®, HKS® and Prismacolor®. [!](https://github.com/fundevogel/we-love-colors)
+
+- ZxSpectrum palette [1](https://en.wikipedia.org/wiki/ZX_Spectrum_graphic_modes#Colour_palette)
 
 - [nice-color-palettes](https://github.com/Experience-Monks/nice-color-palettes) <- [colourlovers.com](https://colourlovers.com)
 - [r-color-palettes](https://github.com/EmilHvitfeldt/r-color-palettes)

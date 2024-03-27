@@ -7,8 +7,8 @@ enum ColorModel {
 
   cmyk(),
 
-  /// A, R, G, B as number.
-  argb(),
+  /// R, G, B as number.
+  rgb(),
 
   /// H, S, L as number.
   hsl(),

@@ -2,7 +2,7 @@ import 'package:uni_color_name/uni_color_name.dart';
 import 'package:test/test.dart';
 
 void main() {
-  const m = ColorModel.argb;
+  const m = ColorModel.rgb;
 
   group('ColorNameUniColorExt', () {
     test('withoutModel', () {
