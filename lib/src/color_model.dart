@@ -14,6 +14,7 @@ enum ColorModel {
   hsl(),
 
   /// H, S, V as number.
+  /// Same HSB. See https://en.m.wikipedia.org/wiki/HSL_and_HSV
   hsv(),
 
   /// X, Y, Z as number.
