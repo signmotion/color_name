@@ -8,6 +8,7 @@ class RgbInt8Color extends Int8Color {
     required super.channel2,
     required super.channel3,
     super.index,
+    super.code,
     super.name,
     super.group,
   }) : super(
@@ -21,11 +22,12 @@ class RgbInt8Color extends Int8Color {
   factory RgbInt8Color.rgbName(int r, int g, int b, String name) =>
       RgbInt8Color(channel1: r, channel2: g, channel3: b, name: name);
 
-  factory RgbInt8Color.rgbNameGroup(
+  factory RgbInt8Color.rgbNameCodeGroup(
     int r,
     int g,
     int b,
     String name,
+    String code,
     String group,
   ) =>
       RgbInt8Color(
@@ -33,6 +35,7 @@ class RgbInt8Color extends Int8Color {
         channel2: g,
         channel3: b,
         name: name,
+        code: code,
         group: group,
       );
 

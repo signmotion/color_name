@@ -13,6 +13,7 @@ class UniColor<N extends num> {
     required this.channel2,
     required this.channel3,
     this.index,
+    this.code = '',
     this.name = '',
     this.group = '',
   });
@@ -24,6 +25,7 @@ class UniColor<N extends num> {
         channel2: channel2.round(),
         channel3: channel3.round(),
         index: index,
+        code: code,
         name: name,
         group: group,
       );
@@ -53,6 +55,9 @@ class UniColor<N extends num> {
 
   bool get hasIndex => index != null;
 
+  /// A color code.
+  final String code;
+
   /// A color name.
   final String name;
 
@@ -73,7 +78,9 @@ class UniColor<N extends num> {
       channel2 == other.channel2 &&
       channel3 == other.channel3 &&
       index == other.index &&
-      name == other.name;
+      code == other.code &&
+      name == other.name &&
+      group == other.group;
 
   /// Subtract channels.
   UniColor operator -(UniColor b) {
@@ -89,7 +96,9 @@ class UniColor<N extends num> {
       channel2: (channel2 - b.channel2) as N,
       channel3: (channel3 - b.channel3) as N,
       index: index,
+      code: code,
       name: name,
+      group: group,
     );
   }
 
@@ -104,7 +113,9 @@ class UniColor<N extends num> {
         channel2: (channel2 * channel2) as N,
         channel3: (channel3 * channel3) as N,
         index: index,
+        code: code,
         name: name,
+        group: group,
       );
 
   N get summarize => ((channel0 ?? 0) + channel1 + channel2 + channel3) as N;
@@ -159,7 +170,9 @@ class UniColor<N extends num> {
       ' $channelPresentation'
       ' $channel0:$channel1:$channel2:$channel3'
       ' $index'
-      ' `$name`';
+      ' `$code`'
+      ' `$name`'
+      ' `$group`';
 
   @override
   int get hashCode => [
@@ -172,6 +185,8 @@ class UniColor<N extends num> {
         channel2,
         channel3,
         index,
+        code,
         name,
+        group,
       ].hashCode;
 }
