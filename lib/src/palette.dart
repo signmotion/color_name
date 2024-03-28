@@ -46,7 +46,7 @@ class UniPalette<T extends C> extends Palette<T> {
     final list = l.map((c) {
       final hasAlpha = c.length == 4;
       final pc = hasAlpha ? c : [0xff, ...c];
-      return pc.colorArgbToInt8Argb;
+      return pc.argbInt8ToRgbInt8Color;
     });
 
     return UniPalette.iterableInt(list, model);

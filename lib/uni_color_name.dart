@@ -7,6 +7,7 @@ import 'package:wfile/wfile.dart';
 
 part 'src/extensions/double.dart';
 part 'src/extensions/int.dart';
+part 'src/extensions/list_int.dart';
 part 'src/extensions/palette.dart';
 part 'src/extensions/string.dart';
 part 'src/extensions/DEPRECATED_uni_color.dart';

@@ -26,12 +26,26 @@ extension ColorNameInt8Ext on int {
   /// The third (blue in ARGB model) channel of this color in an 8 bit value.
   int get int8Channel3Color => (0x000000ff & this) >> 0;
 
-  int get argbToRgbInt8Color => this & 0xffffff;
+  int get argbInt8ToRgbInt8Color => this & 0xffffff;
 
-  String get argbToArgbStringHexInt8Color => toRadixString(16).padLeft(8, '0');
+  List<int> get argbInt8ToArgbListInt8Color => [
+        int8Channel0Color,
+        int8Channel1Color,
+        int8Channel2Color,
+        int8Channel3Color,
+      ];
 
-  String get argbToRgbStringHexInt8Color =>
-      argbToRgbInt8Color.toRadixString(16).padLeft(6, '0');
+  List<int> get argbInt8ToRgbListInt8Color => [
+        int8Channel1Color,
+        int8Channel2Color,
+        int8Channel3Color,
+      ];
+
+  String get argbInt8ToArgbStringHexInt8Color =>
+      toRadixString(16).padLeft(8, '0');
+
+  String get argbInt8ToRgbStringHexInt8Color =>
+      argbInt8ToRgbInt8Color.toRadixString(16).padLeft(6, '0');
 
   /// For example, RGB.
   String get int8Channels123HexColor => toRadixString(16).padLeft(6, '0');
