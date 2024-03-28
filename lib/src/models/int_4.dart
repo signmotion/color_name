@@ -3,7 +3,7 @@ part of '../../uni_color_name.dart';
 /// Color with int 4 bits per channels.
 /// This is what is known as "CGA, EGA, VGA" color.
 /// See https://en.wikipedia.org/wiki/Color_depth#4-bit_color
-class Int4Color extends C<int> {
+class Int4Color extends UniColor<int> {
   const Int4Color({
     required super.model,
     super.channelPresentation,

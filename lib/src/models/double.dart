@@ -1,7 +1,7 @@
 part of '../../uni_color_name.dart';
 
 /// Color with [double] values per channels.
-class DoubleColor extends C<double> {
+class DoubleColor extends UniColor<double> {
   const DoubleColor({
     // can be percentage [0.0; 100.0] also
     super.channelRanges = const [

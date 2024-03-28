@@ -2,8 +2,8 @@ part of '../../uni_color_name.dart';
 
 /// The universal class for color.
 /// The values can represent any [ColorModel] with opacity typed [N].
-class C<N extends num> {
-  const C({
+class UniColor<N extends num> {
+  const UniColor({
     required this.channelDepths,
     required this.channelRanges,
     required this.model,
@@ -57,7 +57,7 @@ class C<N extends num> {
 
   @override
   bool operator ==(Object other) =>
-      other is C<N> &&
+      other is UniColor<N> &&
       channelDepths == other.channelDepths &&
       channelRanges == other.channelRanges &&
       model == other.model &&
@@ -70,10 +70,10 @@ class C<N extends num> {
       name == other.name;
 
   /// Subtract channels.
-  C operator -(C b) {
+  UniColor operator -(UniColor b) {
     assertSameModel(b);
     assertArgbModel();
-    return C(
+    return UniColor(
       channelDepths: channelDepths,
       channelRanges: channelRanges,
       model: model,
@@ -88,7 +88,7 @@ class C<N extends num> {
   }
 
   /// this ^ 2
-  C get square => C(
+  UniColor get square => UniColor(
         channelDepths: channelDepths,
         channelRanges: channelRanges,
         model: model,
@@ -104,35 +104,35 @@ class C<N extends num> {
   N get summarize => ((channel0 ?? 0) + channel1 + channel2 + channel3) as N;
 
   /// `true` when [channel0]s are equal.
-  bool equalChannel0(C b, {int decimals = -1}) => (channel0 ?? 0)
+  bool equalChannel0(UniColor b, {int decimals = -1}) => (channel0 ?? 0)
       .toDouble()
       .equalWithDecimals((b.channel0 ?? 0).toDouble(), decimals: decimals);
 
   /// `true` when [channel1]s are equal.
-  bool equalChannel1(C b, {int decimals = -1}) => channel1
+  bool equalChannel1(UniColor b, {int decimals = -1}) => channel1
       .toDouble()
       .equalWithDecimals(b.channel1.toDouble(), decimals: decimals);
 
   /// `true` when [channel2]s are equal.
-  bool equalChannel2(C b, {int decimals = -1}) => channel2
+  bool equalChannel2(UniColor b, {int decimals = -1}) => channel2
       .toDouble()
       .equalWithDecimals(b.channel2.toDouble(), decimals: decimals);
 
   /// `true` when [channel2]s are equal.
-  bool equalChannel3(C b, {int decimals = -1}) => channel3
+  bool equalChannel3(UniColor b, {int decimals = -1}) => channel3
       .toDouble()
       .equalWithDecimals(b.channel3.toDouble(), decimals: decimals);
 
   /// `true` when all channels are equal.
-  bool equalChannels(C b, {int decimals = -1}) =>
+  bool equalChannels(UniColor b, {int decimals = -1}) =>
       equalChannel0(b, decimals: decimals) &&
       equalChannel1(b, decimals: decimals) &&
       equalChannel2(b, decimals: decimals) &&
       equalChannel3(b, decimals: decimals);
 
-  bool sameModel(C b) => model == b.model;
+  bool sameModel(UniColor b) => model == b.model;
 
-  void assertSameModel(C b) {
+  void assertSameModel(UniColor b) {
     if (model != b.model) {
       throw ArgumentError('The color models should be same.'
           ' $model != ${b.model}');

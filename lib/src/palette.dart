@@ -1,8 +1,8 @@
 part of '../uni_color_name.dart';
 
-/// A palette with colors [C].
+/// A palette with colors [UniColor].
 /// See structures into the `README`.
-abstract class Palette<T extends C> {
+abstract class Palette<T extends UniColor> {
   /// ! [map] should contains 1 model.
   const Palette(this.list) : assert(list.length > 1);
 
@@ -21,7 +21,7 @@ abstract class Palette<T extends C> {
 
 /// The universal palette for represent any color as a [T]-typed value.
 /// Adding an alpha when absent.
-class UniPalette<T extends C> extends Palette<T> {
+class UniPalette<T extends UniColor> extends Palette<T> {
   UniPalette(super.list);
 
   /// Constructing from [File].

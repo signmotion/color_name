@@ -1,6 +1,6 @@
 part of '../uni_color_name.dart';
 
-/// The presentation of [C] channel.
+/// The presentation of [UniColor] channel.
 enum ColorChannelPresentation {
   unspecified(),
 

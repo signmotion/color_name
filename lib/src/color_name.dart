@@ -1,7 +1,7 @@
 part of '../uni_color_name.dart';
 
 /// [T] Full color presentation.
-abstract class ColorName<T extends C, P extends Palette<T>> {
+abstract class ColorName<T extends UniColor, P extends Palette<T>> {
   const ColorName(this.palette);
 
   final P palette;
@@ -23,7 +23,7 @@ abstract class ColorName<T extends C, P extends Palette<T>> {
 
 /// A class for work with [UniPalette] and [UniColor] defined into [palette].
 /// If [palette] is not defined use [UniPalette] with all known palettes.
-class UniColorName<T extends C> extends ColorName<T, UniPalette<T>> {
+class UniColorName<T extends UniColor> extends ColorName<T, UniPalette<T>> {
   const UniColorName(super.palette);
 
   @override

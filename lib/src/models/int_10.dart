@@ -3,7 +3,7 @@ part of '../../uni_color_name.dart';
 /// Color with int 10 bits per channels.
 /// This is what is known as "deep color".
 /// See https://en.wikipedia.org/wiki/Color_depth#Deep_color_(30-bit)
-class Int10Color extends C<int> {
+class Int10Color extends UniColor<int> {
   const Int10Color({
     required super.model,
     super.channelPresentation,

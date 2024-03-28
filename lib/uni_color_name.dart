@@ -22,7 +22,7 @@ part 'src/palettes/zeplin.dart';
 part 'src/models/argb_double.dart';
 part 'src/models/argb_int_4.dart';
 part 'src/models/argb_int_8.dart';
-part 'src/models/color.dart';
+part 'src/models/uni_color.dart';
 part 'src/models/double.dart';
 part 'src/models/int_4.dart';
 part 'src/models/int_8.dart';
