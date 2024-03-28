@@ -14,6 +14,7 @@ class UniColor<N extends num> {
     required this.channel3,
     this.index,
     this.name = '',
+    this.group = '',
   });
 
   /// All converters has a suffix `Color`.
@@ -24,6 +25,7 @@ class UniColor<N extends num> {
         channel3: channel3.round(),
         index: index,
         name: name,
+        group: group,
       );
 
   /// Bits per channels including [channel0].
@@ -51,7 +53,11 @@ class UniColor<N extends num> {
 
   bool get hasIndex => index != null;
 
+  /// A color name.
   final String name;
+
+  /// Some palettes can have a group for color.
+  final String group;
 
   bool get hasName => name.trim().isNotEmpty;
 

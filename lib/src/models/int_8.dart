@@ -13,6 +13,7 @@ class Int8Color extends UniColor<int> {
     required super.channel3,
     super.index,
     super.name,
+    super.group,
   }) : super(
           channelDepths: const [8, 8, 8, 8],
           channelRanges: const [
