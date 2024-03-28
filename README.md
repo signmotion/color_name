@@ -29,14 +29,14 @@ Share some ❤️ and star repo to support the project.
 ## Usage
 
 ```dart
-final palette = UniPalette(PalettesMaps.zeplin);
-final c = UniColorName(palette);
-print(c.value('forrest green'));
-print(c.name((0.08, 0.27, 0.02), decimals: 2));
+final palette = UniPalette(zeplinColors);
+final u = UniColorName(palette);
+print(u.value('forrest green'));
+print(u.name(RgbInt8Color.rgb(0x15, 0x44, 0x06)));
 ```
 
 ```text
-(argb, 1.0, 0.0823529411764706, 0.266666666666667, 0.0235294117647059)
+154406
 forrest green
 ```
 
@@ -281,6 +281,10 @@ Once you start using the **UniColorName**, it will become easy to choose the fun
 - Tagged color palettes. [1](https://colorhunt.co/palette/d61355f94a29fce22a30e3df)
 
 - Names in different lanuages? [1](https://rgb.to/ral/6038)
+
+- Meanings of color? [1](https://www.smashingmagazine.com/2010/01/color-theory-for-designers-part-1-the-meaning-of-color) [2](https://99designs.com/blog/tips/color-meanings) [3](https://www.interaction-design.org/literature/topics/color-symbolism)
+
+- Color names for base color? [1](https://louisem.com/29880/color-thesaurus-infographic)
 
 It's just a habit of mine: writing down ideas that come to mind while working on a project. I confess that I rarely return to these notes. But now, hopefully, even if you don't have an idea yet, the above notes will help you choose the suitable "feature" and become a contributor to the open-source community.
 
