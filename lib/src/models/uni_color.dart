@@ -14,9 +14,13 @@ class UniColor<N extends num> {
     required this.channel3,
     this.index,
     this.code = '',
-    this.name = '',
+    this.defaultLanguage = 'en',
+    String? name,
+    Names? names,
     this.group = '',
-  });
+  })  : assert(name != null || names != null),
+        _name = name,
+        _names = names;
 
   /// All converters has a suffix `Color`.
   RgbInt8Color get rgbInt8Color => RgbInt8Color(
@@ -24,9 +28,11 @@ class UniColor<N extends num> {
         channel1: channel1.round(),
         channel2: channel2.round(),
         channel3: channel3.round(),
-        index: index,
         code: code,
+        index: index,
+        defaultLanguage: defaultLanguage,
         name: name,
+        names: names,
         group: group,
       );
 
@@ -58,13 +64,21 @@ class UniColor<N extends num> {
   /// A color code.
   final String code;
 
-  /// A color name.
-  final String name;
+  /// A default language for color name as Alpha2-code standard.
+  final String defaultLanguage;
+
+  /// A color name on [defaultLanguage].
+  final String? _name;
+  String get name => _name ?? names[defaultLanguage]!;
+
+  /// Color names.
+  final Names? _names;
+  Names get names => _names ?? Names({defaultLanguage: name});
 
   /// Some palettes can have a group for color.
   final String group;
 
-  bool get hasName => name.trim().isNotEmpty;
+  bool get hasName => names.map.isNotEmpty;
 
   @override
   bool operator ==(Object other) =>
@@ -97,7 +111,9 @@ class UniColor<N extends num> {
       channel3: (channel3 - b.channel3) as N,
       index: index,
       code: code,
+      defaultLanguage: defaultLanguage,
       name: name,
+      names: names,
       group: group,
     );
   }
@@ -114,7 +130,9 @@ class UniColor<N extends num> {
         channel3: (channel3 * channel3) as N,
         index: index,
         code: code,
+        defaultLanguage: defaultLanguage,
         name: name,
+        names: names,
         group: group,
       );
 
@@ -172,6 +190,7 @@ class UniColor<N extends num> {
       ' $index'
       ' `$code`'
       ' `$name`'
+      ' $names'
       ' `$group`';
 
   @override
@@ -187,6 +206,7 @@ class UniColor<N extends num> {
         index,
         code,
         name,
+        names,
         group,
       ].hashCode;
 }

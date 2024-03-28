@@ -35,4 +35,5 @@ part 'src/color_channel_presentation.dart';
 part 'src/color_distance.dart';
 part 'src/color_model.dart';
 part 'src/color_name.dart';
+part 'src/names.dart';
 part 'src/palette.dart';
