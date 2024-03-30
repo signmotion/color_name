@@ -1,7 +1,7 @@
 name: uni_color_name
 description: >-
   Identifies the value of a color by name and vice versa. Knows over 900 color names.
-  The easy-to-use and well-tested library.
+  The easy-to-use and well-tested library for fuzzy search.
 repository: https://github.com/signmotion/uni_color_name
 topics:
   - identify
@@ -9,6 +9,7 @@ topics:
   - palette
   - detector
   - image
+publish_to: none
 
 # Format:
 #   version: major.minor.patch
@@ -21,8 +22,10 @@ environment:
   sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
-  collection: ^1.18.0
-  wfile: ^0.4.1
+  uni_color_model:
+    path: ../uni_color_model
+  uni_color_palette:
+    path: ../uni_color_palette
 
 dev_dependencies:
   lints: ^3.0.0

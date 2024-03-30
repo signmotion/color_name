@@ -1,5 +1,5 @@
-import 'package:test/test.dart';
 import 'package:uni_color_name/uni_color_name.dart';
+import 'package:test/test.dart';
 
 void main() {
   group('ColorDistance', () {
