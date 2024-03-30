@@ -16,6 +16,8 @@ Extends [UniColorModel](https://github.com/signmotion/uni_color_name) to detect 
 The easy-to-use and [well-tested](https://github.com/signmotion/uni_color_name/tree/master/test) package.
 Feel free to use it in your awesome projects.
 
+[<img src="https://raw.githubusercontent.com/signmotion/uni_color_model/master/images/dependencies.webp"/>](https://raw.githubusercontent.com/signmotion/uni_color_model/master/images/dependencies.webp)
+
 | Android | iOS | Linux | MacOS | Web | Windows |              |
 | :-----: | :-: | :---: | :---: | :-: | :-----: | :----------- |
 |   ✅    | ✅  |  ✅   |  ✅   |  ✘  |   ✅    | **platform** |
