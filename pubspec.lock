@@ -372,16 +372,18 @@ packages:
   uni_color_model:
     dependency: "direct main"
     description:
-      path: "../uni_color_model"
-      relative: true
-    source: path
+      name: uni_color_model
+      sha256: "93ea6e22c951906a2551c6de52a57e3f20c720777a126055ab645889d9181fc8"
+      url: "https://pub.dev"
+    source: hosted
     version: "0.1.0"
   uni_color_palette:
     dependency: "direct main"
     description:
-      path: "../uni_color_palette"
-      relative: true
-    source: path
+      name: uni_color_palette
+      sha256: "6f493ccec4ecf6c93f9d4cc447a53cc5d913842cf61596ccbc4c22b72687c5d1"
+      url: "https://pub.dev"
+    source: hosted
     version: "0.1.0"
   vector_math:
     dependency: transitive

@@ -1,6 +1,6 @@
 name: uni_color_name
 description: >-
-  Identifies the value of a color by name and vice versa. Knows over 900 color names.
+  Identifies the value of a color by name and vice versa. Knows over 1000 color names.
   The easy-to-use and well-tested library for fuzzy search.
 repository: https://github.com/signmotion/uni_color_name
 topics:
@@ -9,23 +9,24 @@ topics:
   - palette
   - detector
   - image
-publish_to: none
 
 # Format:
 #   version: major.minor.patch
 # You can calculate the number version code by this formula:
 #   code = m[A]jor * 100 * 100 + m[I]nor * 100 + [P]atch
 # Otherwise: +AAIIPP
-version: 0.5.0
+version: 0.6.0
 
 environment:
   sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
   uni_color_model:
-    path: ../uni_color_model
+    ^0.1.0
+    #path: ../uni_color_model
   uni_color_palette:
-    path: ../uni_color_palette
+    ^0.1.0
+    #path: ../uni_color_palette
 
 dev_dependencies:
   lints: ^3.0.0

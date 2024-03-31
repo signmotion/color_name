@@ -3,6 +3,13 @@
 All notable changes to the project `UniColorName` will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.6.0
+
+- Split into 3 projects:
+  - this
+  - [UniColorModel](https://pub.dev/packages/uni_color_model)
+  - [UniColorPalette](https://pub.dev/packages/uni_color_palette)
+
 ## 0.5.0
 
 - Expanded `UniColor` with alpha channel. Updated palettes.
