@@ -12,7 +12,7 @@
 [![Issues](https://img.shields.io/github/issues/signmotion/uni_color_name?logo=github&logoColor=white)](https://github.com/signmotion/uni_color_name/issues)
 [![Pub Score](https://img.shields.io/pub/points/uni_color_name?logo=dart&logoColor=00b9fc)](https://pub.dev/packages/uni_color_name/score)
 
-Extends [UniColorModel](https://github.com/signmotion/uni_color_name) to detect the value of a color by name and vice versa. Knows over 900 color names. Uses a variety of approaches to calculate distance for fuzzy search.
+Extends [UniColorModel](https://github.com/signmotion/uni_color_model) to detect the value of a color by name and vice versa. Knows over 1000 color names. Uses a variety of approaches to calculate distance for fuzzy search.
 The easy-to-use and [well-tested](https://github.com/signmotion/uni_color_name/tree/master/test) package.
 Feel free to use it in your awesome projects.
 
@@ -42,7 +42,7 @@ print(u.name(RgbInt8Color.rgb(0x15, 0x44, 0x06)));
 forrest green
 ```
 
-See also [uni_color_palette](https://github.com/signmotion/uni_color_palette) `example/all_palettes` folder with Flutter example that visualize palette.
+See also package [UniColorPalette](https://pub.dev/packages/uni_color_palette), `example/all_palettes` and `example/all_colors` folders with Flutter examples that visualize palettes.
 
 [<img src="https://raw.githubusercontent.com/signmotion/uni_color_name/master/images/screenshots/zeplin_palette.webp" width="600"/>](https://raw.githubusercontent.com/signmotion/uni_color_name/master/images/screenshots/zeplin_palette.webp)
 
