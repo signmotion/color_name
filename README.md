@@ -31,8 +31,7 @@ Share some ❤️ and star repo to support the project.
 ## Usage
 
 ```dart
-final palette = UniPalette(zeplinColors);
-final u = UniColorName(palette);
+final u = UniColorName(zeplinPalette);
 print(u.value('forrest green'));
 print(u.name(RgbInt8Color.rgb(0x15, 0x44, 0x06)));
 ```
@@ -93,8 +92,9 @@ Once you start using the **UniColorName**, it will become easy to choose the fun
 - Check out the Web platform.
 - How to define your own color name matcher.
 
-- Optimize a search by value.
+- Optimize a search.
 - Fuzzy search by name.
+- Fuzzy search by value.
 
 It's just a habit of mine: writing down ideas that come to mind while working on a project. I confess that I rarely return to these notes. But now, hopefully, even if you don't have an idea yet, the above notes will help you choose the suitable "feature" and become a contributor to the open-source community.
 
