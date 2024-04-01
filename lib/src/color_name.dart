@@ -1,7 +1,7 @@
 part of '../uni_color_name.dart';
 
-/// [T] Full color presentation.
-abstract class ColorName<T extends UniColor, P extends Palette<T>> {
+/// [T] is a type for [UniColor].
+abstract class ColorName<T extends num, P extends UniPalette<T>> {
   const ColorName(this.palette);
 
   final P palette;
@@ -10,27 +10,28 @@ abstract class ColorName<T extends UniColor, P extends Palette<T>> {
 
   /// A value of color by [name].
   /// Use a [ColorNameStringExt.normalizedNameColor] for search.
-  T? value(String name) => palette[name] ?? palette[name.normalizedNameColor];
+  UniColor<T>? value(String name) =>
+      palette[name] ?? palette[name.normalizedNameColor];
 
   /// A name of color by [color] with model (full color represenation).
   /// Match with respects to [decimals].
-  String? name(T color, {int decimals = -1});
+  String? name(UniColor<T> color, {int decimals = -1});
 
   /// A closest color from the [palette].
   /// See [ColorDistance].
-  T closest(T color, ColorDistance cd);
+  NumColor<T> closest(NumColor<T> color, ColorDistance cd);
 }
 
 /// A class for work with [UniPalette] and [UniColor] defined into [palette].
 /// If [palette] is not defined use [UniPalette] with all known palettes.
-class UniColorName<T extends UniColor> extends ColorName<T, UniPalette<T>> {
+class UniColorName<T extends num> extends ColorName<T, UniPalette<T>> {
   const UniColorName(super.palette);
 
   @override
-  String? name(T color, {int decimals = -1}) =>
+  String? name(UniColor<T> color, {int decimals = -1}) =>
       _name(color, decimals: decimals);
 
-  String? _name(T color, {int decimals = -1}) {
+  String? _name(UniColor<T> color, {int decimals = -1}) {
     for (final c in palette.list) {
       if (!color.sameModel(c)) {
         // TODO(sign): Convert between models.
@@ -87,13 +88,13 @@ class UniColorName<T extends UniColor> extends ColorName<T, UniPalette<T>> {
   // List<Map<String, dynamic>>? _points;
 
   @override
-  T closest(T color, ColorDistance cd) {
+  NumColor<T> closest(NumColor<T> color, ColorDistance cd) {
     // respect JavaScript limitation
     final maxIntValue = pow(2, 53).round() - 1;
     var min = maxIntValue.toDouble();
-    late T found;
+    late NumColor<T> found;
     for (final other in palette.list) {
-      final d = cd.distance(color, other);
+      final d = cd.distance(color, other as NumColor<T>);
       if (d < min) {
         min = d;
         found = other;
