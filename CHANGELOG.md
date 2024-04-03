@@ -3,6 +3,11 @@
 All notable changes to the project `UniColorName` will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.7.0
+
+- Refactoring after changes [UniColorModel](https://pub.dev/packages/uni_color_model).
+- Removed folder `tools`. Reason: Already have into the project [UniColorPalette](https://pub.dev/packages/uni_color_palette).
+
 ## 0.6.0
 
 - Split into 3 projects:
